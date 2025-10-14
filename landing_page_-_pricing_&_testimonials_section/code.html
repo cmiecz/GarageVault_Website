@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Collector's Corner | Elite Inventory Management</title>
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -54,194 +55,286 @@
                 transform-origin: center;
             }
         }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
     </style>
 </head>
 <body class="bg-background-dark text-text-light font-body">
 <div class="relative min-h-screen w-full overflow-x-hidden">
 <header class="sticky top-0 z-50 w-full bg-primary-dark/80 backdrop-blur-sm shadow-lg">
-<div class="container mx-auto px-6 lg:px-8">
-<div class="flex h-20 items-center justify-between border-b border-primary-light/30">
-<div class="flex items-center gap-4">
-<div class="h-10 w-10 text-accent-light">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 sm:h-20 items-center justify-between border-b border-primary-light/30">
+<div class="flex items-center gap-2 sm:gap-4">
+<div class="h-8 w-8 sm:h-10 sm:w-10 text-accent-light flex-shrink-0">
 <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
 </svg>
 </div>
-<h2 class="text-2xl font-display font-bold text-text-light">Collector's Corner</h2>
+<h2 class="text-lg sm:text-2xl font-display font-bold text-text-light">Collector's Corner</h2>
 </div>
-<nav class="hidden items-center gap-10 md:flex">
+<nav class="hidden lg:flex items-center gap-10">
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#">Collection Showcase</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#">Membership</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#">Support</a>
 </nav>
-<div class="flex items-center gap-4">
-<button class="flex h-12 items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-accent-light transition-colors hover:bg-primary-light shadow-lg">
+<div class="flex items-center gap-2 sm:gap-4">
+<button class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-accent-light transition-colors hover:bg-primary-light shadow-lg">
 <span class="truncate">Join the Corner</span>
+</button>
+<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+<path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
 </button>
 </div>
 </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu lg:hidden">
+<nav class="flex flex-col gap-4 py-6 border-b border-primary-light/30">
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#">Collection Showcase</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#">Membership</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#">Support</a>
+<button class="mt-2 h-12 w-full items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-accent-light transition-colors hover:bg-primary-light shadow-lg">
+<span class="truncate">Join the Corner</span>
+</button>
+</nav>
+</div>
 </div>
 </header>
-<main class="container mx-auto px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
 <div class="max-w-6xl mx-auto">
-<section class="mb-32">
-<div class="relative rounded-2xl overflow-hidden min-h-[600px] flex items-center justify-center p-12 bg-cover bg-center shadow-2xl" style='background-image: linear-gradient(to top, rgba(26, 54, 71, 0.9), rgba(37, 72, 99, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoQPOVTDlunPlxyk3deY-o1MTVuag0OtPkhUTXK-zNFddvOU2uS5UlJJeJ7aty_rovPWbNd6GG8V0n8qkLq4zBE-i4nTFcxAvCkicxC73reQci_nTU4Od_sGZqS4AqNY8UxFrlSevCN3YUVNUX532Rx2vVfkT-5I9RUl0e1teKq1mB30nrt-bppr4ktkjtXOq01LzHn_MO1MbEwfVvqyBstSwudVDEmBntNK4EhGyqJtrzid2FWEevoWHbsWF_uYp8eZVKSLa1qw4"); background-position: center center;'>
-<div class="flex flex-col gap-8 text-center text-text-light max-w-3xl">
-<h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight">Curate Your Automotive Legacy</h1>
-<p class="text-xl md:text-2xl text-accent-light leading-relaxed">Meticulously track and showcase your prized tools, exquisite parts, and classic automobiles with unparalleled precision and elegance.</p>
-<div class="mt-6">
-<button class="h-14 rounded-lg bg-accent px-8 text-lg font-bold text-accent-light shadow-xl transition-colors hover:bg-primary-light">
+<section class="mb-16 sm:mb-24 lg:mb-32">
+<div class="relative rounded-xl sm:rounded-2xl overflow-hidden min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] flex items-center justify-center p-6 sm:p-10 lg:p-12 bg-cover bg-center shadow-2xl" style='background-image: linear-gradient(to top, rgba(26, 54, 71, 0.9), rgba(37, 72, 99, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoQPOVTDlunPlxyk3deY-o1MTVuag0OtPkhUTXK-zNFddvOU2uS5UlJJeJ7aty_rovPWbNd6GG8V0n8qkLq4zBE-i4nTFcxAvCkicxC73reQci_nTU4Od_sGZqS4AqNY8UxFrlSevCN3YUVNUX532Rx2vVfkT-5I9RUl0e1teKq1mB30nrt-bppr4ktkjtXOq01LzHn_MO1MbEwfVvqyBstSwudVDEmBntNK4EhGyqJtrzid2FWEevoWHbsWF_uYp8eZVKSLa1qw4"); background-position: center center;'>
+<div class="flex flex-col gap-4 sm:gap-6 lg:gap-8 text-center text-text-light max-w-3xl">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold tracking-tight leading-tight">Curate Your Automotive Legacy</h1>
+<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-accent-light leading-relaxed">Meticulously track and showcase your prized tools, exquisite parts, and classic automobiles with unparalleled precision and elegance.</p>
+<div class="mt-2 sm:mt-4 lg:mt-6">
+<button class="h-12 sm:h-14 rounded-lg bg-accent px-6 sm:px-8 text-base sm:text-lg font-bold text-accent-light shadow-xl transition-colors hover:bg-primary-light w-full sm:w-auto">
 <span class="truncate">Begin Your Collection</span>
 </button>
 </div>
 </div>
 </div>
 </section>
-<section class="mb-32">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-display font-bold text-text-light">Tiered Membership Insights</h2>
-<p class="mt-4 text-lg text-text-dark">Discover the perfect echelon of features for your collection.</p>
+<section class="mb-16 sm:mb-24 lg:mb-32">
+<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-text-light px-4">Tiered Membership Insights</h2>
+<p class="mt-2 sm:mt-4 text-base sm:text-lg text-text-dark px-4">Discover the perfect echelon of features for your collection.</p>
 </div>
-<div class="overflow-hidden rounded-2xl border border-primary-dark bg-primary-dark/70 shadow-xl">
+
+<!-- Desktop Table View -->
+<div class="hidden md:block overflow-hidden rounded-2xl border border-primary-dark bg-primary-dark/70 shadow-xl">
 <table class="w-full text-left">
 <thead class="bg-primary-dark">
 <tr>
-<th class="p-6 text-lg font-bold text-text-light w-2/5">Attribute</th>
-<th class="p-6 text-lg font-bold text-accent-light text-center">Curator</th>
-<th class="p-6 text-lg font-bold text-accent-light text-center">Connoisseur</th>
+<th class="p-4 lg:p-6 text-base lg:text-lg font-bold text-text-light w-2/5">Attribute</th>
+<th class="p-4 lg:p-6 text-base lg:text-lg font-bold text-accent-light text-center">Curator</th>
+<th class="p-4 lg:p-6 text-base lg:text-lg font-bold text-accent-light text-center">Connoisseur</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-primary-dark/80">
 <tr class="hover:bg-primary-dark/40">
-<td class="p-6 font-medium text-text-light">Collection Inventory Management</td>
-<td class="p-6 text-center text-text-dark">Essential</td>
-<td class="p-6 text-center font-semibold text-accent-light">Masterclass</td>
+<td class="p-4 lg:p-6 font-medium text-text-light text-sm lg:text-base">Collection Inventory Management</td>
+<td class="p-4 lg:p-6 text-center text-text-dark text-sm lg:text-base">Essential</td>
+<td class="p-4 lg:p-6 text-center font-semibold text-accent-light text-sm lg:text-base">Masterclass</td>
 </tr>
 <tr class="hover:bg-primary-dark/40">
-<td class="p-6 font-medium text-text-light">Tool &amp; Equipment Registry</td>
-<td class="p-6 text-center text-text-dark">Curated (Up to 100 items)</td>
-<td class="p-6 text-center font-semibold text-accent-light">Unrestricted</td>
+<td class="p-4 lg:p-6 font-medium text-text-light text-sm lg:text-base">Tool &amp; Equipment Registry</td>
+<td class="p-4 lg:p-6 text-center text-text-dark text-sm lg:text-base">Curated (Up to 100 items)</td>
+<td class="p-4 lg:p-6 text-center font-semibold text-accent-light text-sm lg:text-base">Unrestricted</td>
 </tr>
 <tr class="hover:bg-primary-dark/40">
-<td class="p-6 font-medium text-text-light">Parts &amp; Supply Cataloging</td>
-<td class="p-6 text-center text-text-dark">Detailed</td>
-<td class="p-6 text-center font-semibold text-accent-light">Exhaustive</td>
+<td class="p-4 lg:p-6 font-medium text-text-light text-sm lg:text-base">Parts &amp; Supply Cataloging</td>
+<td class="p-4 lg:p-6 text-center text-text-dark text-sm lg:text-base">Detailed</td>
+<td class="p-4 lg:p-6 text-center font-semibold text-accent-light text-sm lg:text-base">Exhaustive</td>
 </tr>
 <tr class="hover:bg-primary-dark/40">
-<td class="p-6 font-medium text-text-light">Valuation &amp; Historical Records</td>
-<td class="p-6 text-center text-text-dark">Summarized</td>
-<td class="p-6 text-center font-semibold text-accent-light">Comprehensive</td>
+<td class="p-4 lg:p-6 font-medium text-text-light text-sm lg:text-base">Valuation &amp; Historical Records</td>
+<td class="p-4 lg:p-6 text-center text-text-dark text-sm lg:text-base">Summarized</td>
+<td class="p-4 lg:p-6 text-center font-semibold text-accent-light text-sm lg:text-base">Comprehensive</td>
 </tr>
 <tr class="hover:bg-primary-dark/40">
-<td class="p-6 font-medium text-text-light">Multi-User Access &amp; Collaboration</td>
-<td class="p-6 text-center text-text-dark">Single User</td>
-<td class="p-6 text-center font-semibold text-accent-light">Team (Up to 5 Users)</td>
+<td class="p-4 lg:p-6 font-medium text-text-light text-sm lg:text-base">Multi-User Access &amp; Collaboration</td>
+<td class="p-4 lg:p-6 text-center text-text-dark text-sm lg:text-base">Single User</td>
+<td class="p-4 lg:p-6 text-center font-semibold text-accent-light text-sm lg:text-base">Team (Up to 5 Users)</td>
 </tr>
 <tr class="hover:bg-primary-dark/40">
-<td class="p-6 font-medium text-text-light">Dedicated Concierge Support</td>
-<td class="p-6 text-center text-text-dark">Standard</td>
-<td class="p-6 text-center font-semibold text-accent-light">Priority Access</td>
+<td class="p-4 lg:p-6 font-medium text-text-light text-sm lg:text-base">Dedicated Concierge Support</td>
+<td class="p-4 lg:p-6 text-center text-text-dark text-sm lg:text-base">Standard</td>
+<td class="p-4 lg:p-6 text-center font-semibold text-accent-light text-sm lg:text-base">Priority Access</td>
 </tr>
 </tbody>
 </table>
 </div>
+
+<!-- Mobile Card View -->
+<div class="md:hidden space-y-6">
+<div class="rounded-xl border border-primary-dark bg-primary-dark/70 p-6 shadow-xl">
+<h3 class="text-xl font-bold text-accent-light mb-4 text-center">Curator</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Collection Inventory Management</span>
+<span class="text-text-dark text-sm text-right">Essential</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Tool & Equipment Registry</span>
+<span class="text-text-dark text-sm text-right">Curated (Up to 100 items)</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Parts & Supply Cataloging</span>
+<span class="text-text-dark text-sm text-right">Detailed</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Valuation & Historical Records</span>
+<span class="text-text-dark text-sm text-right">Summarized</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Multi-User Access & Collaboration</span>
+<span class="text-text-dark text-sm text-right">Single User</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Dedicated Concierge Support</span>
+<span class="text-text-dark text-sm text-right">Standard</span>
+</div>
+</div>
+</div>
+
+<div class="rounded-xl border-2 border-accent bg-primary-dark p-6 shadow-xl">
+<h3 class="text-xl font-bold text-accent-light mb-4 text-center">Connoisseur</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Collection Inventory Management</span>
+<span class="font-semibold text-accent-light text-sm text-right">Masterclass</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Tool & Equipment Registry</span>
+<span class="font-semibold text-accent-light text-sm text-right">Unrestricted</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Parts & Supply Cataloging</span>
+<span class="font-semibold text-accent-light text-sm text-right">Exhaustive</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Valuation & Historical Records</span>
+<span class="font-semibold text-accent-light text-sm text-right">Comprehensive</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Multi-User Access & Collaboration</span>
+<span class="font-semibold text-accent-light text-sm text-right">Team (Up to 5 Users)</span>
+</div>
+<div class="flex justify-between items-start gap-4">
+<span class="font-medium text-text-light text-sm">Dedicated Concierge Support</span>
+<span class="font-semibold text-accent-light text-sm text-right">Priority Access</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section class="mb-32">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-display font-bold text-text-light">Exclusive Memberships, Tailored Excellence</h2>
-<p class="mt-4 text-lg text-text-dark">Curate your collection with a plan that reflects its true value.</p>
+<section class="mb-16 sm:mb-24 lg:mb-32">
+<div class="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-text-light">Exclusive Memberships, Tailored Excellence</h2>
+<p class="mt-2 sm:mt-4 text-base sm:text-lg text-text-dark">Curate your collection with a plan that reflects its true value.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-<div class="flex flex-col gap-8 rounded-2xl border border-primary-dark bg-primary-dark/70 p-10 h-full transition-all duration-300 hover:border-primary-light/50 hover:shadow-2xl hover:shadow-primary/10">
-<div class="flex flex-col gap-3">
-<h3 class="text-3xl font-display font-bold text-text-light">Curator</h3>
-<p class="flex items-baseline gap-3">
-<span class="text-6xl font-extrabold text-accent-light">$0</span>
-<span class="text-text-dark font-medium text-xl">/month</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-stretch">
+<div class="flex flex-col gap-6 sm:gap-8 rounded-xl sm:rounded-2xl border border-primary-dark bg-primary-dark/70 p-6 sm:p-8 lg:p-10 h-full transition-all duration-300 hover:border-primary-light/50 hover:shadow-2xl hover:shadow-primary/10">
+<div class="flex flex-col gap-2 sm:gap-3">
+<h3 class="text-2xl sm:text-3xl font-display font-bold text-text-light">Curator</h3>
+<p class="flex items-baseline gap-2 sm:gap-3">
+<span class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-accent-light">$0</span>
+<span class="text-text-dark font-medium text-lg sm:text-xl">/month</span>
 </p>
-<p class="text-text-dark text-lg">Ideal for emerging collectors and discerning enthusiasts.</p>
+<p class="text-text-dark text-base sm:text-lg">Ideal for emerging collectors and discerning enthusiasts.</p>
 </div>
-<button class="h-14 w-full rounded-lg border border-primary-light/50 bg-primary-light/10 text-accent-light font-bold text-lg transition-colors hover:bg-primary-light/20">Embark on Your Journey</button>
-<ul class="flex flex-col gap-4 text-lg">
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Essential Collection Tracking</li>
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Limited Tool Registry (Up to 100)</li>
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Community Forums Access</li>
+<button class="h-12 sm:h-14 w-full rounded-lg border border-primary-light/50 bg-primary-light/10 text-accent-light font-bold text-base sm:text-lg transition-colors hover:bg-primary-light/20">Embark on Your Journey</button>
+<ul class="flex flex-col gap-3 sm:gap-4 text-base sm:text-lg">
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Essential Collection Tracking</span></li>
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Limited Tool Registry (Up to 100)</span></li>
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Community Forums Access</span></li>
 </ul>
 </div>
-<div class="relative flex flex-col gap-8 rounded-2xl border-2 border-accent bg-primary-dark p-10 h-full shadow-3xl shadow-accent/20 transform scale-105">
-<div class="absolute top-0 right-10 -translate-y-1/2 rounded-full bg-accent px-4 py-2 text-sm font-bold text-accent-light uppercase tracking-wide">Featured Choice</div>
-<div class="flex flex-col gap-3">
-<h3 class="text-3xl font-display font-bold text-text-light">Connoisseur</h3>
-<p class="flex items-baseline gap-3">
-<span class="text-6xl font-extrabold text-accent-light">$99</span>
-<span class="text-text-dark font-medium text-xl">/month</span>
+<div class="relative flex flex-col gap-6 sm:gap-8 rounded-xl sm:rounded-2xl border-2 border-accent bg-primary-dark p-6 sm:p-8 lg:p-10 h-full shadow-2xl shadow-accent/20 md:transform md:scale-105">
+<div class="absolute top-0 right-6 sm:right-10 -translate-y-1/2 rounded-full bg-accent px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-accent-light uppercase tracking-wide">Featured Choice</div>
+<div class="flex flex-col gap-2 sm:gap-3">
+<h3 class="text-2xl sm:text-3xl font-display font-bold text-text-light">Connoisseur</h3>
+<p class="flex items-baseline gap-2 sm:gap-3">
+<span class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-accent-light">$99</span>
+<span class="text-text-dark font-medium text-lg sm:text-xl">/month</span>
 </p>
-<p class="text-text-dark text-lg">For serious collectors and professional workshops demanding perfection.</p>
+<p class="text-text-dark text-base sm:text-lg">For serious collectors and professional workshops demanding perfection.</p>
 </div>
-<button class="h-14 w-full rounded-lg bg-accent text-accent-light font-bold text-lg shadow-lg transition-colors hover:bg-primary-light">Elevate Your Collection</button>
-<ul class="flex flex-col gap-4 text-lg">
-<li class="flex items-center gap-4 font-semibold text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>All Curator features, plus:</li>
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Unlimited Tool &amp; Equipment Registry</li>
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Advanced Valuation &amp; Reporting</li>
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Multi-User Team Access (Up to 5)</li>
-<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Priority Concierge Support</li>
+<button class="h-12 sm:h-14 w-full rounded-lg bg-accent text-accent-light font-bold text-base sm:text-lg shadow-lg transition-colors hover:bg-primary-light">Elevate Your Collection</button>
+<ul class="flex flex-col gap-3 sm:gap-4 text-base sm:text-lg">
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 font-semibold text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>All Curator features, plus:</span></li>
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Unlimited Tool &amp; Equipment Registry</span></li>
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Advanced Valuation &amp; Reporting</span></li>
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Multi-User Team Access (Up to 5)</span></li>
+<li class="flex items-start sm:items-center gap-3 sm:gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-xl sm:text-2xl flex-shrink-0">check_circle</span><span>Priority Concierge Support</span></li>
 </ul>
 </div>
 </div>
 </section>
-<section class="mb-32">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-display font-bold text-text-light">A Glimpse into Refined Management</h2>
-<p class="mt-4 text-lg text-text-dark">Explore the intuitive interface crafted for connoisseurs.</p>
+<section class="mb-16 sm:mb-24 lg:mb-32">
+<div class="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-text-light">A Glimpse into Refined Management</h2>
+<p class="mt-2 sm:mt-4 text-base sm:text-lg text-text-dark">Explore the intuitive interface crafted for connoisseurs.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-<div class="flex flex-col gap-6 group">
-<div class="w-full aspect-[5/4] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzKY72M48QEyHgqNoak-QSwaa6zaTzZm79Lfn2mvmf9vnDVctfL4oJ4SbabV45Mgu6HZJw5Q0j06WP8OQnvFUF11qGndvW1U6D4_okFA17x7SrTbqdukmcmW-kvaHvV3eKV9mOhhP84ezGbogqC6sHKg2qn7TWPS2PIVnAIXL6k-ioeOBmJ2q-RF4DLitvUoIBAh8VooprSKgkKssyFRrgAjQMCD71g8ICU4SaAs0N7PvBAYXEejAq8_wu2NqoLkH3sQpH-yjlvxI");'></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+<div class="flex flex-col gap-4 sm:gap-6 group">
+<div class="w-full aspect-[5/4] bg-cover bg-center rounded-xl sm:rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzKY72M48QEyHgqNoak-QSwaa6zaTzZm79Lfn2mvmf9vnDVctfL4oJ4SbabV45Mgu6HZJw5Q0j06WP8OQnvFUF11qGndvW1U6D4_okFA17x7SrTbqdukmcmW-kvaHvV3eKV9mOhhP84ezGbogqC6sHKg2qn7TWPS2PIVnAIXL6k-ioeOBmJ2q-RF4DLitvUoIBAh8VooprSKgkKssyFRrgAjQMCD71g8ICU4SaAs0N7PvBAYXEejAq8_wu2NqoLkH3sQpH-yjlvxI");'></div>
 <div>
-<h3 class="font-display font-bold text-xl text-text-light">Catalog Your Arsenal</h3>
-<p class="text-text-dark text-base mt-2">Effortlessly register and organize your precision tools with rich details.</p>
+<h3 class="font-display font-bold text-lg sm:text-xl text-text-light">Catalog Your Arsenal</h3>
+<p class="text-text-dark text-sm sm:text-base mt-1 sm:mt-2">Effortlessly register and organize your precision tools with rich details.</p>
 </div>
 </div>
-<div class="flex flex-col gap-6 group">
-<div class="w-full aspect-[5/4] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOZw70EH_KAR1-wdh8akefS_YiLgJHmXp-kVyxeghfPOPUNJmwU-ZV9NXMNK9GGTCK6tDIw7bt5-owlh9P7IGTzL1C0GVPcSLfpeW3vC7xbU2KRNa17cC7mUXYIIHUxWw7bxYgqxcMY6hvVkWjabg-SrZSWzfm9P5h7C_96M0hl7308OWwoKOAWEfADcQNLta72UCa0drxzhf3Gy1_fxIC34kskzGecwLH2MAgyBSRJ5MNVWxYtzn0UmJh63ZLbBf33ylmzGRBUFM");'></div>
+<div class="flex flex-col gap-4 sm:gap-6 group">
+<div class="w-full aspect-[5/4] bg-cover bg-center rounded-xl sm:rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOZw70EH_KAR1-wdh8akefS_YiLgJHmXp-kVyxeghfPOPUNJmwU-ZV9NXMNK9GGTCK6tDIw7bt5-owlh9P7IGTzL1C0GVPcSLfpeW3vC7xbU2KRNa17cC7mUXYIIHUxWw7bxYgqxcMY6hvVkWjabg-SrZSWzfm9P5h7C_96M0hl7308OWwoKOAWEfADcQNLta72UCa0drxzhf3Gy1_fxIC34kskzGecwLH2MAgyBSRJ5MNVWxYtzn0UmJh63ZLbBf33ylmzGRBUFM");'></div>
 <div>
-<h3 class="font-display font-bold text-xl text-text-light">Chronicle Rare Components</h3>
-<p class="text-text-dark text-base mt-2">Maintain meticulous records of bespoke parts and invaluable supplies.</p>
+<h3 class="font-display font-bold text-lg sm:text-xl text-text-light">Chronicle Rare Components</h3>
+<p class="text-text-dark text-sm sm:text-base mt-1 sm:mt-2">Maintain meticulous records of bespoke parts and invaluable supplies.</p>
 </div>
 </div>
-<div class="flex flex-col gap-6 group">
-<div class="w-full aspect-[5/4] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMF61_Gu80nUvk35AOh1OPvNCqEmAhNmjCPPY-VaYVGWAZtUE7F3rQNUePXPEo9FlgGtwDJXkvI11eXtRCj0Fp21az9qyjf7HK___USXRmvpc5TC4FDwcW5eCHAyPNiTA8EXbYsP7vN9FbQpQwT2sgdA8fIilTUz2p5JbagBBsieUwAvzzRhNIjYKpEz9HpB_hj4EMneRgL4zB_HpgTcPFfBmeDsrxX69Us-ku5oFNB34ImhwJaB_8idrImhxEJ_aLG_v7hGoOFK0");'></div>
+<div class="flex flex-col gap-4 sm:gap-6 group">
+<div class="w-full aspect-[5/4] bg-cover bg-center rounded-xl sm:rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMF61_Gu80nUvk35AOh1OPvNCqEmAhNmjCPPY-VaYVGWAZtUE7F3rQNUePXPEo9FlgGtwDJXkvI11eXtRCj0Fp21az9qyjf7HK___USXRmvpc5TC4FDwcW5eCHAyPNiTA8EXbYsP7vN9FbQpQwT2sgdA8fIilTUz2p5JbagBBsieUwAvzzRhNIjYKpEz9HpB_hj4EMneRgL4zB_HpgTcPFfBmeDsrxX69Us-ku5oFNB34ImhwJaB_8idrImhxEJ_aLG_v7hGoOFK0");'></div>
 <div>
-<h3 class="font-display font-bold text-xl text-text-light">Generate Pristine Reports</h3>
-<p class="text-text-dark text-base mt-2">Produce elegant summaries of your inventory and usage for archival purposes.</p>
+<h3 class="font-display font-bold text-lg sm:text-xl text-text-light">Generate Pristine Reports</h3>
+<p class="text-text-dark text-sm sm:text-base mt-1 sm:mt-2">Produce elegant summaries of your inventory and usage for archival purposes.</p>
 </div>
 </div>
 </div>
 </section>
-<section class="mb-32">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-display font-bold text-text-light">Accolades from Esteemed Collectors</h2>
+<section class="mb-16 sm:mb-24 lg:mb-32">
+<div class="text-center mb-8 sm:mb-12 lg:mb-16 px-4">
+<h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-text-light">Accolades from Esteemed Collectors</h2>
 </div>
-<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 rounded-2xl bg-primary-dark/40 p-12 lg:p-16 overflow-hidden shadow-xl">
-<div class="w-full lg:w-1/2 aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl">
+<div class="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-16 rounded-xl sm:rounded-2xl bg-primary-dark/40 p-6 sm:p-10 lg:p-16 overflow-hidden shadow-xl">
+<div class="w-full lg:w-1/2 aspect-video lg:aspect-square rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
 <div class="w-full h-full bg-cover bg-center ken-burns" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPZMvbMB8jmesbmSPb_MLKJthOAee44wNY-1CKLfOaGAvqtEAF_VWb893AJHRgPOb16JHmpIEZ-tMlEkZzXEqEA7vAKpgyNe6353CQLOHQ-0sP2OSN4LzKr_ni8LqdYSpQCp-2bmd6AVDlxHW-nOEvf3ABGc5-y8slM8ykBOaLnTSkoUMWU1wg9JNbUTUAoGq28YxyHm15KKzQVslD4gTJtdIAiXLUQf4CdYEgw4PtfPcJImTAH3IYBh161Z6F8SNNDHuhv04xKuE");'></div>
 </div>
 <div class="flex-1">
-<blockquote class="text-2xl lg:text-3xl font-body font-medium text-text-light leading-relaxed">
+<blockquote class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-body font-medium text-text-light leading-relaxed">
                             "Collector's Corner has transformed my entire approach to managing my prized vehicles and bespoke tools. Its precision and intuitive design allow me to seamlessly track everything, ensuring my collection remains in immaculate order. Truly indispensable for any serious enthusiast."
                         </blockquote>
-<footer class="mt-8">
-<p class="font-display font-bold text-xl text-accent-light">Sebastian Thorne</p>
-<p class="text-base text-text-dark">Renowned Automotive Collector &amp; Restorer</p>
+<footer class="mt-6 sm:mt-8">
+<p class="font-display font-bold text-lg sm:text-xl text-accent-light">Sebastian Thorne</p>
+<p class="text-sm sm:text-base text-text-dark">Renowned Automotive Collector &amp; Restorer</p>
 </footer>
 </div>
 </div>
 </section>
-<section class="text-center bg-primary-dark rounded-2xl py-20 px-12 shadow-xl">
-<h2 class="text-5xl font-display font-bold tracking-tight text-text-light">Ready to Refine Your Collection?</h2>
-<p class="mt-6 text-xl text-accent-light max-w-3xl mx-auto">Join a distinguished community of collectors and elevate your inventory management to an art form today.</p>
-<div class="mt-10">
-<button class="h-14 rounded-lg bg-accent px-10 text-xl font-bold text-accent-light shadow-xl transition-colors hover:bg-primary-light">
+<section class="text-center bg-primary-dark rounded-xl sm:rounded-2xl py-10 sm:py-16 lg:py-20 px-6 sm:px-10 lg:px-12 shadow-xl">
+<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-text-light">Ready to Refine Your Collection?</h2>
+<p class="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-accent-light max-w-3xl mx-auto">Join a distinguished community of collectors and elevate your inventory management to an art form today.</p>
+<div class="mt-6 sm:mt-8 lg:mt-10">
+<button class="h-12 sm:h-14 rounded-lg bg-accent px-8 sm:px-10 text-base sm:text-lg lg:text-xl font-bold text-accent-light shadow-xl transition-colors hover:bg-primary-light w-full sm:w-auto">
 <span class="truncate">Curate Your Corner Now</span>
 </button>
 </div>
@@ -249,26 +342,59 @@
 </div>
 </main>
 <footer class="bg-primary-dark/80 border-t border-primary-light/30">
-<div class="container mx-auto px-6 lg:px-8 py-16">
-<div class="flex flex-col md:flex-row justify-between items-center gap-10">
-<div class="flex items-center gap-4">
-<div class="h-10 w-10 text-accent-light">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-10">
+<div class="flex items-center gap-2 sm:gap-4">
+<div class="h-8 w-8 sm:h-10 sm:w-10 text-accent-light flex-shrink-0">
 <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
 </svg>
 </div>
-<h2 class="text-2xl font-display font-bold text-text-light">Collector's Corner</h2>
+<h2 class="text-lg sm:text-xl lg:text-2xl font-display font-bold text-text-light">Collector's Corner</h2>
 </div>
-<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg">
+<nav class="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 sm:gap-y-4 text-base sm:text-lg">
 <a class="text-text-dark hover:text-accent-light transition-colors" href="#">Showcase</a>
 <a class="text-text-dark hover:text-accent-light transition-colors" href="#">Membership</a>
 <a class="text-text-dark hover:text-accent-light transition-colors" href="#">Support</a>
 <a class="text-text-dark hover:text-accent-light transition-colors" href="#">Terms of Service</a>
 <a class="text-text-dark hover:text-accent-light transition-colors" href="#">Privacy Policy</a>
 </nav>
-<p class="text-base text-text-dark">© 2024 Collector's Corner. All rights reserved.</p>
+<p class="text-sm sm:text-base text-text-dark text-center md:text-left">© 2024 Collector's Corner. All rights reserved.</p>
 </div>
 </div>
 </footer>
 </div>
+
+<script>
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
+const closeIcon = mobileMenuBtn.querySelector('.close-icon');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+// Close mobile menu when clicking on a link
+const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
+});
+
+// Close mobile menu on window resize if open
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    }
+});
+</script>
 </body></html>
