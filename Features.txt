@@ -1,0 +1,335 @@
+I'll comprehensively review your codebase to document all features. Let me search through the key screens and functionality.
+
+[9 tools called]
+
+Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed feature list** for Garage Vault:
+
+---
+
+# 📦 GARAGE VAULT - COMPLETE FEATURE LIST
+
+## 🆓 **FREE TIER FEATURES** (Up to 10 items)
+
+### **Core Inventory Management**
+- ✅ **Add up to 10 items** to inventory
+- ✅ **1 photo per item** with camera or gallery selection
+- ✅ **1 receipt photo per item**
+- ✅ **AI-powered product detection** - Take photo, AI extracts brand, size, category, color
+- ✅ **Barcode/QR scanning** for quick item lookup
+- ✅ **Manual item entry** - Full form with all fields
+- ✅ **Search & filter** - Find items instantly
+- ✅ **Sort options** - By date, name, category, quantity
+- ✅ **Item categories** - Custom category management
+
+### **Item Details Tracking**
+- ✅ Name, brand, model, serial number
+- ✅ Purchase price, date, store
+- ✅ Warranty information and expiration
+- ✅ Estimated current value
+- ✅ Expiration dates (for paints/chemicals)
+- ✅ Condition tracking (new, like-new, good, fair, poor)
+- ✅ Notes and descriptions
+- ✅ Purchase links (Home Depot, Lowe's, Amazon quick search)
+
+### **Quantity Management**
+- ✅ **Consumable tracking** - Slider + stepper for quantities
+- ✅ **Tool/Equipment tracking** - In Stock/Missing toggle
+- ✅ **Min/Max thresholds** - Set low stock alerts
+- ✅ **Unit types** - Pieces, boxes, gallons, etc.
+- ✅ **Smart quantity input** - Optimized UI per category
+- ✅ **Low stock indicators** - Visual badges on items
+
+### **Equipment Features** (Free!)
+- ✅ **Equipment category** - Standard category for powered equipment
+- ✅ **In Stock/Missing toggle** - Like tools, not consumables
+- ✅ **Maintenance parts tracking** - Track consumables for equipment (oil, filters, etc.)
+- ✅ **AI parts detection** - Auto-detect common maintenance parts from photos
+- ✅ **Parts inventory** - Monitor part quantities and low stock
+- ✅ **Purchase links for parts** - Quick retailer search
+
+### **Shopping & Restocking**
+- ✅ **Auto-generated shopping list** - Low stock items appear automatically
+- ✅ **Smart store grouping** - Items grouped by recommended store
+- ✅ **One-tap restock** - "Purchased" button auto-updates quantity
+- ✅ **Share shopping list** - Export as text to Messages, Notes, etc.
+
+### **Additional Features**
+- ✅ **Clone items** - Duplicate with all details
+- ✅ **Edit & delete** - Full item management
+- ✅ **Privacy controls** - Mark items as private
+- ✅ **Data export** - Your data belongs to you
+- ✅ **Dark/Light mode** - Interface customization (planned)
+
+---
+
+## 💎 **PREMIUM TIER FEATURES** ($4.99/month or $39.99/year)
+
+### **Unlimited Capacity**
+- ✅ **Unlimited items** - No 10-item limit
+- ✅ **Unlimited photos per item** - Add as many as needed
+- ✅ **Unlimited receipt photos** - Store all receipts
+- ✅ **Unlimited categories** - Organize your way
+- ✅ **Unlimited storage locations** - Track across multiple spaces
+
+### **Household Sharing & Sync**
+- ✅ **Real-time cloud sync** - Instant updates across all devices
+- ✅ **6-digit invite codes** - Easy household setup
+- ✅ **Multi-device access** - Use from any device
+- ✅ **Collaborative editing** - Everyone can add/edit items
+- ✅ **Member management** - See who's in your household
+- ✅ **Device tracking** - View connected devices
+- ✅ **Share control** - Mark items private when needed
+- ✅ **Supabase backend** - Secure, reliable cloud storage
+
+### **Storage Locations & QR Codes**
+- ✅ **Create storage locations** - Unlimited locations (Packout, bins, drawers, shelves, cabinets, toolboxes)
+- ✅ **QR code generation** - Unique QR code for each location
+- ✅ **QR code display** - View, print, share, or save QR codes
+- ✅ **Scan to view contents** - Instantly see what's in a container
+- ✅ **Scan to assign** - Tag items to location via QR scan
+- ✅ **Location-based filtering** - Find items by storage location
+- ✅ **Color coding** - Optional color labels for locations
+- ✅ **Multi-room tracking** - Organize across property
+- ✅ **Quick location picker** - Easy assignment when adding items
+
+### **Advanced Maintenance Tracking**
+- ✅ **Service history logging** - Complete maintenance records
+- ✅ **Cost tracking** - Service cost, parts cost, labor cost breakdown
+- ✅ **Service provider tracking** - Record who did the service
+- ✅ **Hours & mileage tracking** - Monitor equipment usage
+- ✅ **Service notes** - Detailed maintenance notes
+- ✅ **Photo attachments** - Service photos & receipt photos
+- ✅ **Next service scheduling** - Set future maintenance dates
+- ✅ **Edit/delete records** - Full record management
+- ✅ **Summary statistics** - Total services, total spent, average cost
+- ✅ **Calendar export (ICS)** - Export to device calendar
+- ✅ **Recurring reminders** - Based on maintenance intervals
+- ✅ **Parts replacement logs** - Track when parts were changed
+- ✅ **Overdue alerts** - Never miss maintenance
+
+### **Equipment Maintenance Schedules**
+- ✅ **Automatic maintenance tab** - All Equipment items get maintenance tracking
+- ✅ **4 default tasks** - Oil change, air filter, spark plug, blade sharpening
+- ✅ **Custom maintenance tasks** - Add unlimited custom tasks
+- ✅ **Task icons** - Choose from 10 icons (water, cloud, flash, cut, etc.)
+- ✅ **Custom intervals** - Weekly, monthly, 90 days, 6 months, yearly, custom
+- ✅ **Status badges** - Up to Date, Due Soon, Overdue
+- ✅ **Last done date** - Track when last serviced
+- ✅ **Next due date** - Automatic calculation
+- ✅ **Edit/delete tasks** - Full task management
+- ✅ **Database persistence** - All tasks saved and synced
+
+### **Location-Based Store Reminders** (Geofencing)
+- ✅ **70+ pre-loaded store locations** - Major cities across US
+- ✅ **Supported chains**:
+  - Home Depot (15 locations)
+  - Lowe's (9 locations)
+  - Ace Hardware (4 locations)
+  - Menards (4 locations)
+  - Harbor Freight (3 locations)
+  - True Value (2 locations)
+  - Tractor Supply (3 locations)
+- ✅ **150-meter geofencing** - Precise detection (~500 feet radius)
+- ✅ **Two-tiered detection** - Geofence database + reverse geocoding fallback
+- ✅ **Smart notifications** - Only when you have low stock items
+- ✅ **Notification content** - Shows item count and names
+- ✅ **2-hour cooldown** - No spam, one alert per 2 hours
+- ✅ **Battery efficient** - Updates every 100m or 5 minutes
+- ✅ **Background monitoring** - Works when app is closed (iOS)
+- ✅ **Store selection** - Choose which chains to monitor
+- ✅ **Enable/disable toggle** - Full control in Settings
+
+### **Cross-Household Sharing**
+- ✅ **Connect with other households** - Friends, family, neighbors
+- ✅ **6-character connection codes** - Secure sharing system
+- ✅ **Bidirectional connections** - Both households must connect
+- ✅ **Trusted connections** - Persistent relationships
+- ✅ **Share individual items** - Select specific items to share
+- ✅ **Bulk sharing** - Share all public items at once
+- ✅ **Category-based bulk sharing** - Share by category (Tools, Hardware, etc.)
+- ✅ **Permission levels** - View Only or Can Edit Quantity
+- ✅ **Expiration dates** - 7 days, 30 days, 90 days, or Never
+- ✅ **Revoke sharing** - Cancel access anytime
+- ✅ **Privacy controls** - Mark items private to exclude from sharing
+- ✅ **Shared item badges** - Visual indicators on shared items
+- ✅ **Tool lending tracking** - Track borrowed items
+- ✅ **Multiple households** - Connect with many households
+- ✅ **Share statistics** - Track sharing activity
+- ✅ **Connection management** - View and manage all connections
+
+### **Advanced Analytics & Insights**
+- ✅ **Inventory overview** - Total items, low stock count
+- ✅ **Category breakdown** - See what you have most
+- ✅ **Top categories chart** - Visual breakdown
+- ✅ **Storage location stats** - Track location usage
+- ✅ **Spending analysis** - Total inventory investment
+- ✅ **Warranty tracking** - Monitor expiring warranties
+- ✅ **Expiration monitoring** - Track expiring items (paints, chemicals)
+- ✅ **Maintenance insights** - Upcoming maintenance tasks
+- ✅ **Parts analytics** - Maintenance parts overview
+- ✅ **Value tracking** - Monitor inventory worth
+
+---
+
+## 🎨 **USER EXPERIENCE FEATURES**
+
+### **Interface**
+- ✅ **Native iOS design** - Apple Human Interface Guidelines
+- ✅ **Bottom tab navigation** - 5 main tabs
+- ✅ **Modal sheets** - Focused task flows
+- ✅ **Smooth animations** - React Native Reanimated
+- ✅ **Context menus** - Long-press for quick actions
+- ✅ **Pull-to-refresh** - Update inventory
+- ✅ **Safe area support** - Notch/island compatible
+- ✅ **Translucent tab bar** - Modern iOS feel
+
+### **Main Screens**
+1. **Inventory Tab** - View all items, search, filter, low stock card
+2. **Storage Locations Tab** - Manage locations, scan QR codes (Premium)
+3. **Scan Item (Center +)** - Quick camera access for AI scanning
+4. **Add Item Tab** - Full form for manual entry
+5. **Settings Tab** - Categories, household, analytics, preferences
+
+### **Additional Screens**
+- ✅ **Item Detail Screen** - 3 tabs: Details, Purchase, Maintenance
+- ✅ **Edit Item Screen** - Full editing capabilities
+- ✅ **Shopping List Screen** - Low stock items grouped by store
+- ✅ **Service History Screen** - Complete maintenance logs
+- ✅ **QR Code Display** - View/print/share location QR codes
+- ✅ **Manage Categories Screen** - Add/edit/delete categories
+- ✅ **Household Setup Screen** - Create/join households
+- ✅ **Select Stores Screen** - Choose geofencing stores
+- ✅ **Welcome Screen** - First-time user onboarding
+
+### **Smart Components**
+- ✅ **Smart quantity input** - Adapts to item type
+- ✅ **Storage location picker** - Quick location assignment
+- ✅ **Battery platform selector** - For tools with batteries
+- ✅ **Dynamic form fields** - Category-specific fields
+- ✅ **Share item modal** - Cross-household sharing UI
+- ✅ **Bulk share modal** - Share multiple items
+- ✅ **Paywall modal** - Beautiful Apple-style upgrade UI
+- ✅ **Maintenance schedule manager** - Add/edit tasks
+- ✅ **Log service modal** - Record maintenance
+- ✅ **Edit service record modal** - Update past services
+
+---
+
+## 🔧 **TECHNICAL FEATURES**
+
+### **AI & Computer Vision**
+- ✅ **OpenAI GPT-4 Vision API** - Advanced image analysis
+- ✅ **Product identification** - Brand, model, size extraction
+- ✅ **Paint color detection** - Extract color codes and finishes
+- ✅ **Fastener recognition** - Sizes, thread types, materials
+- ✅ **Multi-photo scanning** - Process multiple images at once
+- ✅ **Smart categorization** - Auto-assign categories
+- ✅ **Quantity estimation** - Guess quantities from photos
+
+### **Cloud & Database**
+- ✅ **Supabase backend** - PostgreSQL database
+- ✅ **Real-time subscriptions** - Live data sync
+- ✅ **Row-level security (RLS)** - Household data privacy
+- ✅ **Supabase Storage** - Cloud image storage
+- ✅ **Storage bucket setup** - Organized file structure
+- ✅ **JSONB details column** - Flexible category-specific data
+- ✅ **GIN indexes** - Fast JSONB queries
+- ✅ **Triggers & functions** - Auto-update timestamps, status
+- ✅ **Helper functions** - Access control, statistics
+
+### **State Management**
+- ✅ **Zustand stores** - Global state management
+  - inventoryStore - Items and CRUD operations
+  - householdStore - Household membership
+  - storageStore - Storage locations
+  - categoryStore - Custom categories
+  - subscriptionStore - Premium status
+  - sharingStore - Cross-household sharing
+  - locationSettingsStore - Store reminders settings
+- ✅ **AsyncStorage persistence** - Local data caching
+- ✅ **Optimized selectors** - Prevent unnecessary re-renders
+- ✅ **Real-time sync** - Automatic cloud updates
+
+### **Subscriptions (RevenueCat)**
+- ✅ **RevenueCat SDK integration** - In-app purchase management
+- ✅ **Monthly subscription** - $4.99/month
+- ✅ **Annual subscription** - $39.99/year (33% savings)
+- ✅ **Entitlement checking** - "premium" entitlement
+- ✅ **Restore purchases** - Cross-device subscription recovery
+- ✅ **Subscription listener** - Real-time status updates
+- ✅ **Apple compliance** - Auto-renew disclosures, restore button
+- ✅ **Sandbox testing** - Test purchases without charges
+
+### **Permissions & Privacy**
+- ✅ **Camera** - Item and QR code scanning
+- ✅ **Photo library** - Select images from gallery
+- ✅ **Location (optional)** - Store reminders geofencing
+- ✅ **Background location (iOS)** - Monitor when app closed
+- ✅ **Notifications (optional)** - Low stock and store alerts
+- ✅ **Calendar (optional)** - Export maintenance reminders
+- ✅ **Privacy-first design** - Data stays in private household
+- ✅ **No data selling** - User data never sold
+- ✅ **GDPR/CCPA ready** - Privacy policy compliant
+
+---
+
+## 📊 **FEATURE COMPARISON TABLE**
+
+| Feature | Free | Premium |
+|---------|------|---------|
+| **Items in inventory** | 10 max | Unlimited ∞ |
+| **Photos per item** | 1 | Unlimited ∞ |
+| **Receipt photos** | 1 | Unlimited ∞ |
+| **AI scanning** | ✅ | ✅ |
+| **Barcode scanning** | ✅ | ✅ |
+| **Shopping list** | ✅ | ✅ |
+| **Low stock alerts** | ✅ | ✅ |
+| **Equipment parts tracking** | ✅ | ✅ |
+| **Search & filter** | ✅ | ✅ |
+| **Custom categories** | ✅ | ✅ |
+| **Purchase links** | ✅ | ✅ |
+| **Clone items** | ✅ | ✅ |
+| **Household sharing** | ❌ | ✅ |
+| **Storage locations & QR codes** | ❌ | ✅ |
+| **Maintenance tracking** | ❌ | ✅ |
+| **Store reminders (geofencing)** | ❌ | ✅ |
+| **Cross-household sharing** | ❌ | ✅ |
+| **Advanced analytics** | ❌ | ✅ |
+
+---
+
+## 🎯 **USE CASES**
+
+### **Homeowners & DIYers**
+- Track all garage/workshop items
+- Never buy duplicate tools or supplies
+- Organize with QR-labeled storage
+- Get reminded when near stores
+- Share inventory with family
+
+### **Contractors & Professionals**
+- Track equipment across job sites
+- Monitor tool inventory
+- Maintenance schedules for equipment
+- Share tools with crew
+- Track equipment value
+
+### **Families**
+- Everyone sees what's in stock
+- Coordinate shopping trips
+- Avoid duplicate purchases
+- Share household items
+- Track warranty information
+
+### **Equipment Owners**
+- Maintain lawn mowers, snow blowers
+- Track service history
+- Schedule maintenance tasks
+- Monitor maintenance costs
+- Never miss oil changes
+
+---
+
+This is a **comprehensive, production-ready app** with extensive free features and powerful premium capabilities. You've built something impressive! 🎉
+
+Would you like me to format this differently or create marketing materials based on this feature list?
