@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GarageVault - Inventory Unlocked | Stop Buying Duplicate Tools</title>
+<meta name="description" content="AI-powered garage organization app. Track your tools, equipment, and inventory. Get reminded what to buy when near hardware stores. Never buy duplicates again!"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4a7c9e",
+              "accent-green": "#3dd598",
+              "accent-orange": "#f5a623",
+              "dark-blue": "#3d5a6e",
+              "background-light": "#f5f5f5",
+              "background-dark": "#1a202c",
+              "text-dark": "#2c3e50",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .gradient-overlay {
+        background: linear-gradient(135deg, rgba(61, 90, 110, 0.95) 0%, rgba(74, 124, 158, 0.85) 100%);
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .feature-card {
+        transition: all 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(74, 124, 158, 0.2);
+      }
+    </style>
+</head>
+<body>
+<div class="bg-white dark:bg-background-dark text-text-dark dark:text-slate-200">
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-background-dark/95 backdrop-blur-lg border-b border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<img src="icon.png" alt="GarageVault Icon" class="h-10 w-10"/>
+<div>
+<h2 class="text-xl font-bold text-dark-blue dark:text-white">GarageVault</h2>
+<p class="text-xs text-gray-500 dark:text-gray-400">Inventory Unlocked</p>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-text-dark hover:text-primary dark:text-slate-300 dark:hover:text-accent-green transition-colors" href="#features">Features</a>
+<a class="text-sm font-semibold text-text-dark hover:text-primary dark:text-slate-300 dark:hover:text-accent-green transition-colors" href="#pricing">Pricing</a>
+</nav>
+<div class="flex items-center">
+<button class="bg-accent-green text-white font-bold text-sm py-3 px-6 rounded-xl hover:bg-accent-green/90 transition-all shadow-lg hover:shadow-xl">
+<span>Download App</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-dark-blue to-primary"></div>
+<div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- Left Column: Content -->
+<div class="text-white text-center lg:text-left">
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+Stop Buying Tools<br/>
+<span class="text-accent-green">You Already Own</span>
+</h1>
+<p class="mt-6 text-xl md:text-2xl text-slate-200 max-w-2xl mx-auto lg:mx-0">
+AI-powered garage organization that tracks your inventory and reminds you what to buy when you're near hardware stores.
+</p>
+<div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<button class="bg-accent-green text-white font-bold text-lg py-4 px-8 rounded-xl hover:bg-accent-green/90 transition-all shadow-2xl hover:shadow-accent-green/50 hover:scale-105">
+Download for iOS
+</button>
+<button class="bg-white/10 backdrop-blur-sm text-white border-2 border-white font-bold text-lg py-4 px-8 rounded-xl hover:bg-white/20 transition-all">
+Learn More
+</button>
+</div>
+<div class="mt-8 flex items-center gap-6 text-sm justify-center lg:justify-start">
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-accent-green" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+<span>Free to start</span>
+</div>
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-accent-green" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+<span>No credit card required</span>
+</div>
+</div>
+</div>
+<!-- Right Column: App Preview -->
+<div class="flex justify-center lg:justify-end">
+<div class="relative animate-float">
+<img src="AppScreen.jpeg" alt="GarageVault App Screenshot" class="w-full max-w-xs md:max-w-sm rounded-3xl shadow-2xl border-8 border-white/20"/>
+<div class="absolute -bottom-4 -right-4 bg-accent-orange text-white px-6 py-3 rounded-full font-bold shadow-xl">
+AI Powered ✨
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll indicator -->
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+</svg>
+</div>
+</section>
+<!-- Features Section -->
+<section id="features" class="py-20 md:py-32 bg-white dark:bg-background-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-dark dark:text-white">Why Choose GarageVault?</h2>
+<p class="mt-4 text-xl text-gray-600 dark:text-slate-400">Everything you need to transform your chaotic garage into a searchable, organized system.</p>
+</div>
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+<!-- Feature 1 -->
+<div class="feature-card bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/20 rounded-2xl p-8 border border-primary/20">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 shadow-lg">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-text-dark dark:text-white mb-3">Snap, Scan, Organized</h3>
+<p class="text-gray-600 dark:text-slate-400">Take a photo - AI identifies items instantly. No typing. Extracts brand, size, and color automatically.</p>
+</div>
+<!-- Feature 2 -->
+<div class="feature-card bg-gradient-to-br from-accent-green/5 to-accent-green/10 dark:from-accent-green/10 dark:to-accent-green/20 rounded-2xl p-8 border border-accent-green/20">
+<div class="w-16 h-16 bg-accent-green rounded-xl flex items-center justify-center mb-6 shadow-lg">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-text-dark dark:text-white mb-3">Never Forget What You Need</h3>
+<p class="text-gray-600 dark:text-slate-400">Get alerts when near Home Depot or Lowe's. "You're near Lowe's - you need deck screws!"</p>
+</div>
+<!-- Feature 3 -->
+<div class="feature-card bg-gradient-to-br from-accent-orange/5 to-accent-orange/10 dark:from-accent-orange/10 dark:to-accent-orange/20 rounded-2xl p-8 border border-accent-orange/20">
+<div class="w-16 h-16 bg-accent-orange rounded-xl flex items-center justify-center mb-6 shadow-lg">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-text-dark dark:text-white mb-3">Family Sharing That Works</h3>
+<p class="text-gray-600 dark:text-slate-400">Everyone sees what's in stock in real-time. No more "I didn't know we had that!"</p>
+</div>
+<!-- Feature 4 -->
+<div class="feature-card bg-gradient-to-br from-dark-blue/5 to-dark-blue/10 dark:from-dark-blue/10 dark:to-dark-blue/20 rounded-2xl p-8 border border-dark-blue/20">
+<div class="w-16 h-16 bg-dark-blue rounded-xl flex items-center justify-center mb-6 shadow-lg">
+<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-text-dark dark:text-white mb-3">QR Code Organization</h3>
+<p class="text-gray-600 dark:text-slate-400">Scan any container to see what's inside. Assign storage locations. Find anything in seconds.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section id="pricing" class="py-20 md:py-32 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-background-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl md:text-5xl font-extrabold text-text-dark dark:text-white">Simple, Transparent Pricing</h2>
+<p class="mt-4 text-xl text-gray-600 dark:text-slate-400">Start for free, upgrade when you need more</p>
+</div>
+<div class="grid gap-8 lg:grid-cols-2 max-w-4xl mx-auto">
+<!-- Free Tier -->
+<div class="bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-2xl shadow-xl p-10 flex flex-col">
+<div class="mb-6">
+<h3 class="text-2xl font-bold text-text-dark dark:text-white">Free</h3>
+<div class="mt-4 flex items-baseline">
+<span class="text-5xl font-extrabold text-text-dark dark:text-white">$0</span>
+<span class="ml-2 text-gray-500 dark:text-slate-400">/forever</span>
+</div>
+<p class="mt-2 text-gray-600 dark:text-slate-400">Perfect for getting started</p>
+</div>
+<button class="w-full mt-6 bg-slate-200 dark:bg-slate-700 text-text-dark dark:text-white font-bold py-4 px-6 rounded-xl hover:bg-slate-300 dark:hover:bg-slate-600 transition-all">Get Started Free</button>
+<ul class="mt-8 space-y-4 text-gray-700 dark:text-slate-300 flex-grow">
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Track up to <strong>10 items</strong></span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Full AI identification</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Photo uploads & location tracking</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Test all core features</span>
+</li>
+</ul>
+</div>
+<!-- Premium Tier -->
+<div class="bg-gradient-to-br from-primary to-dark-blue dark:from-primary dark:to-dark-blue border-2 border-accent-green rounded-2xl shadow-2xl p-10 flex flex-col relative transform lg:scale-105">
+<div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+<span class="bg-accent-green text-white text-sm font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">Most Popular</span>
+</div>
+<div class="mb-6">
+<h3 class="text-2xl font-bold text-white">Premium</h3>
+<div class="mt-4 flex items-baseline">
+<span class="text-5xl font-extrabold text-white">$4.99</span>
+<span class="ml-2 text-slate-200">/month</span>
+</div>
+<p class="mt-2 text-slate-200">or <strong class="text-accent-green">$39.99/year</strong> (save 33%)</p>
+</div>
+<button class="w-full mt-6 bg-accent-green text-white font-bold py-4 px-6 rounded-xl hover:bg-accent-green/90 transition-all shadow-lg hover:shadow-accent-green/50 hover:scale-105">Upgrade to Premium</button>
+<ul class="mt-8 space-y-4 text-white flex-grow">
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base"><strong>Unlimited</strong> inventory items</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Full household sharing</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">QR code label generation</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Maintenance scheduling</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Store location reminders</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Multiple photos per item</span>
+</li>
+<li class="flex items-start">
+<svg class="flex-shrink-0 h-6 w-6 text-accent-green mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="ml-3 text-base">Advanced analytics</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="relative bg-gradient-to-br from-dark-blue to-primary dark:from-dark-blue dark:to-primary py-20 md:py-32 overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+</pattern>
+</defs>
+<rect width="100%" height="100%" fill="url(#grid)"/>
+</svg>
+</div>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+<h2 class="text-4xl md:text-5xl font-extrabold text-white">Transform Your Chaotic Garage</h2>
+<p class="mt-6 max-w-3xl mx-auto text-xl md:text-2xl text-slate-100">Download GarageVault and never buy duplicates again!</p>
+<div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-accent-green text-white font-bold text-lg py-4 px-10 rounded-xl hover:bg-accent-green/90 transition-all shadow-2xl hover:shadow-accent-green/50 hover:scale-105">
+<span class="flex items-center gap-2">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/>
+</svg>
+Download for iOS
+</span>
+</button>
+</div>
+<div class="mt-12 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-white">
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+</svg>
+</div>
+<h4 class="font-bold text-lg">Your Data, Your Control</h4>
+<p class="text-sm text-slate-200 mt-1">Private household data only. No data selling - ever.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+</svg>
+</div>
+<h4 class="font-bold text-lg">Secure Cloud Sync</h4>
+<p class="text-sm text-slate-200 mt-1">Access your inventory from any device, anytime.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+</svg>
+</div>
+<h4 class="font-bold text-lg">AI-Powered</h4>
+<p class="text-sm text-slate-200 mt-1">Smart identification and organization at your fingertips.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black text-white">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<div class="grid md:grid-cols-4 gap-12 mb-12">
+<!-- Brand Column -->
+<div class="md:col-span-2">
+<div class="flex items-center gap-3 mb-4">
+<img src="icon.png" alt="GarageVault Icon" class="h-12 w-12"/>
+<div>
+<h3 class="text-2xl font-bold">GarageVault</h3>
+<p class="text-sm text-slate-400">Inventory Unlocked</p>
+</div>
+</div>
+<p class="text-slate-400 mb-6 max-w-md">Stop buying tools you already own. AI-powered garage organization that tracks your inventory and reminds you what to buy.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors" href="#" aria-label="Twitter">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors" href="#" aria-label="Facebook">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors" href="#" aria-label="Instagram">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2z" fill-rule="evenodd"></path></svg>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="font-bold text-lg mb-4">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#features" class="text-slate-400 hover:text-accent-green transition-colors">Features</a></li>
+<li><a href="#pricing" class="text-slate-400 hover:text-accent-green transition-colors">Pricing</a></li>
+<li><a href="https://garagevault.onrender.com/privacy" class="text-slate-400 hover:text-accent-green transition-colors" target="_blank">Privacy Policy</a></li>
+<li><a href="https://garagevault.onrender.com/terms" class="text-slate-400 hover:text-accent-green transition-colors" target="_blank">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Perfect For -->
+<div>
+<h4 class="font-bold text-lg mb-4">Perfect For</h4>
+<ul class="space-y-3 text-slate-400">
+<li>DIY Enthusiasts</li>
+<li>Homeowners</li>
+<li>Busy Families</li>
+<li>Workshop Owners</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-slate-400">© 2024 GarageVault. All rights reserved.</p>
+<p class="text-xs text-slate-500">Made with care for DIY enthusiasts everywhere</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

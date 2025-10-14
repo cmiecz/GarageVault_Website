@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>GarageVault - Inventory Unlocked | Stop Buying Duplicate Tools</title>
+<meta name="description" content="AI-powered garage organization app. Track your tools, equipment, and inventory. Get reminded what to buy when near hardware stores. Never buy duplicates again!"/>
+<link href="ICON_Transparent 2 Background Removed.png" rel="icon" type="image/png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4a7c9e",
+            "primary-light": "#5a8cae",
+            "primary-dark": "#3d5a6e",
+            "accent": "#2196F3",
+            "accent-light": "#42A5F5",
+            "accent-orange": "#f5a623",
+            "background-light": "#f5f5f5",
+            "background-dark": "#1a202c",
+            "metallic-dark": "#2c3e50",
+            "text-light": "#F5F5F5",
+            "text-dark": "#CDCDCD",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        .ken-burns {
+            animation: kenburns 20s ease-out both infinite;
+        }
+        @keyframes kenburns {
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+                transform-origin: center;
+            }
+            50% {
+                transform: scale(1.1) rotate(2deg);
+                transform-origin: center;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-light font-body">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-primary-dark/90 backdrop-blur-sm shadow-lg">
+<div class="container mx-auto px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between border-b border-primary/30">
+<div class="flex items-center gap-3">
+<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault Icon" class="h-10 w-10"/>
+<div>
+<h2 class="text-2xl font-display font-bold text-text-light">GarageVault</h2>
+<p class="text-xs text-text-dark">Inventory Unlocked</p>
+</div>
+</div>
+<nav class="hidden items-center gap-10 md:flex">
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#features">Features</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex h-12 items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Download App</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+<div class="max-w-6xl mx-auto">
+<section class="mb-32">
+<div class="relative rounded-2xl overflow-hidden min-h-[600px] flex items-center justify-center p-12 bg-cover bg-center shadow-2xl" style='background-image: linear-gradient(to top, rgba(61, 90, 110, 0.9), rgba(74, 124, 158, 0.7)), url("hero.jpg"); background-position: center center;'>
+<div class="flex flex-col gap-8 text-center text-text-light max-w-3xl">
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight">Stop Buying Tools You Already Own</h1>
+<p class="text-xl md:text-2xl text-accent-light leading-relaxed">AI-powered garage organization that tracks your inventory and reminds you what to buy when you're near hardware stores.</p>
+<div class="mt-6">
+<button class="h-14 rounded-lg bg-accent px-8 text-lg font-bold text-white shadow-xl transition-colors hover:bg-accent-light">
+<span class="truncate">Download for iOS</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="features" class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-display font-bold text-text-light">Plan Comparison</h2>
+<p class="mt-4 text-lg text-text-dark">Choose the perfect plan for your garage organization needs.</p>
+</div>
+<div class="overflow-hidden rounded-2xl border border-primary-dark bg-primary-dark/70 shadow-xl">
+<table class="w-full text-left">
+<thead class="bg-primary-dark">
+<tr>
+<th class="p-6 text-lg font-bold text-text-light w-2/5">Feature</th>
+<th class="p-6 text-lg font-bold text-accent-light text-center">Free</th>
+<th class="p-6 text-lg font-bold text-accent-light text-center">Premium</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary-dark/80">
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">Inventory Items</td>
+<td class="p-6 text-center text-text-dark">Up to 10 items</td>
+<td class="p-6 text-center font-semibold text-accent-light">Unlimited</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">AI Identification</td>
+<td class="p-6 text-center text-text-dark">✓ Full Access</td>
+<td class="p-6 text-center font-semibold text-accent-light">✓ Enhanced</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">Photo Uploads</td>
+<td class="p-6 text-center text-text-dark">1 per item</td>
+<td class="p-6 text-center font-semibold text-accent-light">Multiple per item</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">Family Sharing</td>
+<td class="p-6 text-center text-text-dark">Single User</td>
+<td class="p-6 text-center font-semibold text-accent-light">Full Household</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">QR Code Labels</td>
+<td class="p-6 text-center text-text-dark">—</td>
+<td class="p-6 text-center font-semibold text-accent-light">✓ Generate & Print</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">Store Location Reminders</td>
+<td class="p-6 text-center text-text-dark">—</td>
+<td class="p-6 text-center font-semibold text-accent-light">✓ Home Depot, Lowe's</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">Maintenance Scheduling</td>
+<td class="p-6 text-center text-text-dark">—</td>
+<td class="p-6 text-center font-semibold text-accent-light">✓ Track Service History</td>
+</tr>
+<tr class="hover:bg-primary-dark/40">
+<td class="p-6 font-medium text-text-light">Advanced Analytics</td>
+<td class="p-6 text-center text-text-dark">—</td>
+<td class="p-6 text-center font-semibold text-accent-light">✓ Full Reports</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="pricing" class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-display font-bold text-text-light">Simple, Transparent Pricing</h2>
+<p class="mt-4 text-lg text-text-dark">Start for free, upgrade when you need more</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+<div class="flex flex-col gap-8 rounded-2xl border border-primary-dark bg-primary-dark/70 p-10 h-full transition-all duration-300 hover:border-primary-light/50 hover:shadow-2xl hover:shadow-primary/10">
+<div class="flex flex-col gap-3">
+<h3 class="text-3xl font-display font-bold text-text-light">Free</h3>
+<p class="flex items-baseline gap-3">
+<span class="text-6xl font-extrabold text-accent-light">$0</span>
+<span class="text-text-dark font-medium text-xl">/forever</span>
+</p>
+<p class="text-text-dark text-lg">Perfect for getting started</p>
+</div>
+<button class="h-14 w-full rounded-lg border border-primary-light/50 bg-primary-light/10 text-accent-light font-bold text-lg transition-colors hover:bg-primary-light/20">Get Started Free</button>
+<ul class="flex flex-col gap-4 text-lg">
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent text-2xl">check_circle</span>Track up to 10 items</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent text-2xl">check_circle</span>Full AI identification</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent text-2xl">check_circle</span>Photo uploads & location tracking</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent text-2xl">check_circle</span>Test all core features</li>
+</ul>
+</div>
+<div class="relative flex flex-col gap-8 rounded-2xl border-2 border-accent bg-primary-dark p-10 h-full shadow-3xl shadow-accent/20 transform scale-105">
+<div class="absolute top-0 right-10 -translate-y-1/2 rounded-full bg-accent px-4 py-2 text-sm font-bold text-white uppercase tracking-wide">Most Popular</div>
+<div class="flex flex-col gap-3">
+<h3 class="text-3xl font-display font-bold text-text-light">Premium</h3>
+<p class="flex items-baseline gap-3">
+<span class="text-6xl font-extrabold text-accent-light">$4.99</span>
+<span class="text-text-dark font-medium text-xl">/month</span>
+</p>
+<p class="text-accent-light text-base">or <strong>$39.99/year</strong> (save 33%)</p>
+<p class="text-text-dark text-lg">For serious DIY enthusiasts and families</p>
+</div>
+<button class="h-14 w-full rounded-lg bg-accent text-white font-bold text-lg shadow-lg transition-all hover:bg-accent-light hover:scale-105">Upgrade to Premium</button>
+<ul class="flex flex-col gap-4 text-lg">
+<li class="flex items-center gap-4 font-semibold text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>All Free features, plus:</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Unlimited inventory items</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Full household sharing</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>QR code label generation</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Maintenance scheduling</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Store location reminders</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Multiple photos per item</li>
+<li class="flex items-center gap-4 text-text-light"><span class="material-symbols-outlined text-accent-light text-2xl">check_circle</span>Advanced analytics</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-display font-bold text-text-light">Why Choose GarageVault?</h2>
+<p class="mt-4 text-lg text-text-dark">Everything you need to transform your chaotic garage</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+<div class="flex flex-col gap-6 group">
+<div class="w-full aspect-[5/4] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1530124566582-a618bc2615dc?q=80&w=2070&auto=format&fit=crop");'></div>
+<div>
+<h3 class="font-display font-bold text-xl text-text-light">Snap, Scan, Organized</h3>
+<p class="text-text-dark text-base mt-2">Take a photo - AI identifies items instantly. No typing. Extracts brand, size, and color automatically.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 group">
+<div class="w-full aspect-[5/4] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("neverForget3.jpg");'></div>
+<div>
+<h3 class="font-display font-bold text-xl text-text-light">Never Forget What You Need</h3>
+<p class="text-text-dark text-base mt-2">Get alerts when near Home Depot or Lowe's. "You're near Lowe's - you need deck screws!"</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 group">
+<div class="w-full aspect-[5/4] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop");'></div>
+<div>
+<h3 class="font-display font-bold text-xl text-text-light">QR Code Organization</h3>
+<p class="text-text-dark text-base mt-2">Scan any container to see what's inside. Assign storage locations. Find anything in seconds.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="testimonials" class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-display font-bold text-text-light">Loved by DIY Enthusiasts</h2>
+</div>
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 rounded-2xl bg-primary-dark/40 p-12 lg:p-16 overflow-hidden shadow-xl">
+<div class="w-full lg:w-1/2 aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-2xl">
+<div class="w-full h-full bg-cover bg-center ken-burns" style='background-image: url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop");'></div>
+</div>
+<div class="flex-1">
+<blockquote class="text-2xl lg:text-3xl font-body font-medium text-text-light leading-relaxed">
+"GarageVault has completely transformed how I manage my workshop. I used to buy duplicate tools all the time because I couldn't remember what I already had. Now I just check the app before I go shopping. The location reminders are a game-changer!"
+</blockquote>
+<footer class="mt-8">
+<p class="font-display font-bold text-xl text-accent-light">Mike Thompson</p>
+<p class="text-base text-text-dark">DIY Enthusiast & Weekend Warrior</p>
+</footer>
+</div>
+</div>
+</section>
+
+<section class="mb-32">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-display font-bold text-text-light">Frequently Asked Questions</h2>
+<p class="mt-4 text-lg text-text-dark">Everything you need to know about GarageVault</p>
+</div>
+<div class="max-w-4xl mx-auto space-y-6">
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">What does GarageVault do?</h3>
+<p class="text-text-dark text-base leading-relaxed">GarageVault uses AI to organize your garage and track inventory. Take a photo of any tool, paint can, or equipment - the AI identifies it instantly and extracts brand, size, and color automatically. No typing required! You'll get alerts when you're near hardware stores reminding you what you need to buy.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">How does AI identification work?</h3>
+<p class="text-text-dark text-base leading-relaxed">Simply take a photo and our AI instantly identifies the item, extracting details like brand, size, and color automatically. It works with tools, paint, fasteners, equipment, and more - no manual typing needed!</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">What's included in the free version?</h3>
+<p class="text-text-dark text-base leading-relaxed">The free version lets you track up to 10 items with full AI identification, photo uploads, and location tracking. It's perfect for testing all core features before upgrading.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">How does family sharing work?</h3>
+<p class="text-text-dark text-base leading-relaxed">Premium members can share their inventory with their entire household in real-time. Everyone sees what's in stock, so no more "I didn't know we had that!" Check if there's paint before heading to the store. You control exactly what you share.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">What stores support location reminders?</h3>
+<p class="text-text-dark text-base leading-relaxed">Premium members get alerts when near Home Depot, Lowe's, or their local hardware stores. For example: "You're near Lowe's - you need deck screws!" You can check your inventory before shopping and quick reorder right from the app.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">How do QR codes work?</h3>
+<p class="text-text-dark text-base leading-relaxed">Premium members can generate QR labels for toolboxes, shelves, and cabinets. Just scan any container to instantly see what's inside. Assign storage locations to every item and find anything in seconds.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">How much does Premium cost?</h3>
+<p class="text-text-dark text-base leading-relaxed">Premium is $4.99/month or $39.99/year (save 33%). Payment is charged to your Apple Account at confirmation and auto-renews unless canceled 24 hours before the period ends. You can manage your subscription in App Store Account Settings.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">Is my data private and secure?</h3>
+<p class="text-text-dark text-base leading-relaxed">Absolutely! Your data is private household data only with secure cloud sync. We never sell your data - ever. You control what you share with family members. Read our <a href="https://garagevault.onrender.com/privacy" target="_blank" class="text-accent-light hover:text-accent underline">Privacy Policy</a> for full details.</p>
+</div>
+<div class="rounded-2xl bg-primary-dark/40 p-8 shadow-xl">
+<h3 class="text-xl font-display font-bold text-text-light mb-3">Can I track warranties and maintenance?</h3>
+<p class="text-text-dark text-base leading-relaxed">Yes! Premium members can track warranties, purchase dates, set low-stock thresholds for essentials, schedule equipment maintenance, and log service history - all in one place.</p>
+</div>
+</div>
+</section>
+
+<section class="text-center bg-primary-dark rounded-2xl py-20 px-12 shadow-xl">
+<h2 class="text-5xl font-display font-bold tracking-tight text-text-light">Ready to Transform Your Garage?</h2>
+<p class="mt-6 text-xl text-accent-light max-w-3xl mx-auto">Join thousands of DIY enthusiasts and never buy duplicate tools again.</p>
+<div class="mt-10">
+<button class="h-14 rounded-lg bg-accent px-10 text-xl font-bold text-white shadow-xl transition-colors hover:bg-accent-light">
+<span class="truncate">Download for iOS</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-primary-dark/80 border-t border-primary/30">
+<div class="container mx-auto px-6 lg:px-8 py-16">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-3">
+<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault Icon" class="h-10 w-10"/>
+<div>
+<h2 class="text-2xl font-display font-bold text-text-light">GarageVault</h2>
+<p class="text-sm text-text-dark">Inventory Unlocked</p>
+</div>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-lg">
+<a class="text-text-dark hover:text-accent-light transition-colors" href="#features">Features</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="https://garagevault.onrender.com/terms" target="_blank">Terms of Service</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="https://garagevault.onrender.com/privacy" target="_blank">Privacy Policy</a>
+</nav>
+<p class="text-base text-text-dark">© 2024 GarageVault. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
