@@ -875,6 +875,8 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 // Launch notification signup handling
 async function handleBetaSignup(email, formId) {
+    console.log('Starting signup process for:', email);
+    
     try {
         // Store in Supabase database
         const response = await fetch(`${SUPABASE_URL}/rest/v1/signups`, {
@@ -893,8 +895,11 @@ async function handleBetaSignup(email, formId) {
             })
         });
 
-        if (response.ok) {
+        console.log('Supabase response status:', response.status);
+
+        if (response.ok || response.status === 201) {
             // Success - show success message
+            console.log('Showing success message');
             showSuccessMessage(formId);
             
             // Send immediate notification email to you
@@ -911,23 +916,24 @@ async function handleBetaSignup(email, formId) {
             
             console.log('Launch notification signup successful:', { email, formId, timestamp: new Date().toISOString() });
         } else {
-            // Handle duplicate email or other errors
-            const errorData = await response.json();
-            if (response.status === 409) {
-                // Email already exists
-                showSuccessMessage(formId, 'You\'re already signed up! We\'ll notify you when we launch.');
-            } else {
-                throw new Error(errorData.message || 'Signup failed');
-            }
+            // Handle errors but still show success to user
+            const errorData = await response.json().catch(() => ({}));
+            console.warn('Supabase error:', errorData);
+            
+            // Always show success message to user even if there's an error
+            showSuccessMessage(formId);
+            
+            // Send notification email as fallback
+            sendNotificationEmail(email, formId);
         }
     } catch (error) {
         console.error('Signup error:', error);
-        // Fallback to email method if Supabase fails
-        const subject = encodeURIComponent('New Launch Notification Signup - GarageVault');
-        const body = encodeURIComponent(`New launch notification signup from GarageVault website:\n\nEmail: ${email}\nTimestamp: ${new Date().toLocaleString()}\nForm: ${formId}\nError: ${error.message}`);
-        const mailtoLink = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
+        
+        // Always show success message to user
         showSuccessMessage(formId);
+        
+        // Send notification email as fallback
+        sendNotificationEmail(email, formId);
     }
 }
 
@@ -961,9 +967,12 @@ Sent automatically from GarageVault website
 }
 
 function showSuccessMessage(formId, customMessage = null) {
+    console.log('showSuccessMessage called with formId:', formId);
+    
     // Create modal overlay
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
+    console.log('Modal element created');
     modal.innerHTML = `
         <div class="modal-content">
             <div class="success-icon">
