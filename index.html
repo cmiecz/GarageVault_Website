@@ -8,11 +8,44 @@
   gtag('js', new Date());
 
   gtag('config', 'G-0N36H0LXYX');
+  
+  // Debug: Log when GTM loads
+  console.log('Google Tag Manager loaded with ID: G-0N36H0LXYX');
+  
+  // Send page view event
+  gtag('event', 'page_view', {
+    page_title: document.title,
+    page_location: window.location.href
+  });
 </script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#4a7c9e"/>
+<meta name="language" content="en"/>
+<meta name="locale" content="en_US"/>
+<link rel="canonical" href="https://garagevault.app/"/>
+
 <title>GarageVault - Inventory Unlocked | Stop Buying Duplicate Tools</title>
 <meta name="description" content="AI-powered garage organization app. Track your tools, equipment, and inventory. Get reminded what to buy when near hardware stores. Never buy duplicates again!"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://garagevault.app/"/>
+<meta property="og:title" content="GarageVault - Inventory Unlocked | Stop Buying Duplicate Tools"/>
+<meta property="og:description" content="AI-powered garage organization app. Track your tools, equipment, and inventory. Get reminded what to buy when near hardware stores. Never buy duplicates again!"/>
+<meta property="og:image" content="https://garagevault.app/hero.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="GarageVault"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://garagevault.app/"/>
+<meta property="twitter:title" content="GarageVault - Inventory Unlocked | Stop Buying Duplicate Tools"/>
+<meta property="twitter:description" content="AI-powered garage organization app. Track your tools, equipment, and inventory. Get reminded what to buy when near hardware stores. Never buy duplicates again!"/>
+<meta property="twitter:image" content="https://garagevault.app/hero.jpg"/>
+
 <link href="ICON_Transparent 2 Background Removed.png" rel="icon" type="image/png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
@@ -79,14 +112,120 @@
         }
         
     </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "GarageVault",
+      "description": "AI-powered garage organization app that tracks your tools, equipment, and inventory. Get reminded what to buy when you're near hardware stores.",
+      "url": "https://garagevault.app",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "iOS",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free Plan",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Up to 10 items with full AI identification"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium Monthly",
+          "price": "4.99",
+          "priceCurrency": "USD",
+          "billingIncrement": "Monthly",
+          "description": "Unlimited items, QR codes, store reminders, family sharing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Premium Annual",
+          "price": "39.99",
+          "priceCurrency": "USD",
+          "billingIncrement": "Yearly",
+          "description": "Save 33% - All premium features"
+        }
+      ],
+      "featureList": [
+        "AI-Powered Scanning",
+        "QR Code Organization", 
+        "Smart Store Reminders",
+        "Equipment Maintenance Tracking",
+        "Family Sharing",
+        "Auto Shopping List"
+      ],
+      "screenshot": "https://garagevault.app/AppScreen.jpeg",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "GarageVault",
+        "url": "https://garagevault.app"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does GarageVault do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GarageVault uses AI to organize your garage and track inventory. Take a photo of any tool, paint can, or equipment - the AI identifies it instantly and extracts brand, size, and color automatically. No typing required! You'll get alerts when you're near hardware stores reminding you what you need to buy."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "How does AI identification work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply take a photo and our AI instantly identifies the item, extracting details like brand, size, and color automatically. It works with tools, paint, fasteners, equipment, and more - no manual typing needed!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's included in the free version?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "The free version lets you track up to 10 items with full AI identification, photo uploads, and location tracking. It's perfect for testing all core features before upgrading."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-background-dark text-text-light font-body">
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://garagevault.app/"
+    }
+  ]
+}
+</script>
+
 <div class="relative min-h-screen w-full overflow-x-hidden">
 <header class="sticky top-0 z-50 w-full bg-primary-dark/90 backdrop-blur-sm shadow-lg">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex h-16 sm:h-20 items-center justify-between border-b border-primary/30">
 <div class="flex items-center gap-2 sm:gap-3">
-<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault Icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
+<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault - AI-powered garage organization app logo with padlock and wrench icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
 <div>
 <h2 class="text-lg sm:text-xl md:text-2xl font-display font-bold text-text-light">GarageVault</h2>
 <p class="text-xs text-text-dark hidden sm:block">Inventory Unlocked</p>
@@ -152,7 +291,7 @@
 <span class="material-symbols-outlined text-accent-light text-3xl sm:text-4xl">photo_camera</span>
 </div>
 <h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-3">AI-Powered Scanning</h3>
-<p class="text-text-dark text-sm sm:text-base leading-relaxed">Snap a photo and GPT-4 Vision instantly extracts brand, model, size, color, and category. Works with tools, paint cans, fasteners, and more. Multi-photo scanning for batch uploads.</p>
+<p class="text-text-dark text-sm sm:text-base leading-relaxed">Snap a photo and GPT-4 Vision instantly extracts brand, model, size, color, and category. Works with tools, paint cans, fasteners, and more. Multi-photo scanning for batch uploads. <a href="#pricing" class="text-accent-light hover:text-accent underline">Try it free</a> with up to 10 items.</p>
 </div>
 
 <!-- QR Code Storage -->
@@ -161,7 +300,7 @@
 <span class="material-symbols-outlined text-accent-light text-3xl sm:text-4xl">qr_code_2</span>
 </div>
 <h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-3">QR Code Organization</h3>
-<p class="text-text-dark text-sm sm:text-base leading-relaxed">Generate unlimited QR codes for toolboxes, drawers, and shelves. Scan to instantly see contents or assign items. Color-coded labels for multi-room tracking. Print, share, or save codes.</p>
+<p class="text-text-dark text-sm sm:text-base leading-relaxed">Generate unlimited QR codes for toolboxes, drawers, and shelves. Scan to instantly see contents or assign items. Color-coded labels for multi-room tracking. Print, share, or save codes. <a href="#pricing" class="text-accent-light hover:text-accent underline">Available in Premium</a>.</p>
 </div>
 
 <!-- Store Reminders -->
@@ -170,7 +309,7 @@
 <span class="material-symbols-outlined text-accent-light text-3xl sm:text-4xl">location_on</span>
 </div>
 <h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-3">Smart Store Reminders</h3>
-<p class="text-text-dark text-sm sm:text-base leading-relaxed">Get notified when near 70+ hardware stores (Home Depot, Lowe's, Ace, Menards, Harbor Freight). 150m geofencing with 2-hour cooldown. Battery efficient background monitoring.</p>
+<p class="text-text-dark text-sm sm:text-base leading-relaxed">Get notified when near 70+ hardware stores (Home Depot, Lowe's, Ace, Menards, Harbor Freight). 150m geofencing with 2-hour cooldown. Battery efficient background monitoring. <a href="#pricing" class="text-accent-light hover:text-accent underline">Premium feature</a>.</p>
 </div>
 
 <!-- Maintenance Tracking -->
@@ -188,7 +327,7 @@
 <span class="material-symbols-outlined text-accent-light text-3xl sm:text-4xl">people</span>
 </div>
 <h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-3">Family Sharing</h3>
-<p class="text-text-dark text-sm sm:text-base leading-relaxed">Real-time cloud sync across all devices. 6-digit invite codes for easy setup. Everyone sees what's in stock. Collaborative editing. Mark items private when needed. Multi-device access.</p>
+<p class="text-text-dark text-sm sm:text-base leading-relaxed">Real-time cloud sync across all devices. 6-digit invite codes for easy setup. Everyone sees what's in stock. Collaborative editing. Mark items private when needed. Multi-device access. <a href="#pricing" class="text-accent-light hover:text-accent underline">Premium feature</a>.</p>
 </div>
 
 <!-- Smart Shopping -->
@@ -608,7 +747,7 @@ Start Free Trial
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
 <div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-10">
 <div class="flex items-center gap-2 sm:gap-3">
-<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault Icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
+<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault - AI-powered garage organization app logo with padlock and wrench icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
 <div>
 <h2 class="text-xl sm:text-2xl font-display font-bold text-text-light">GarageVault</h2>
 <p class="text-xs sm:text-sm text-text-dark">Inventory Unlocked</p>
