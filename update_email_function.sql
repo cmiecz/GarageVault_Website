@@ -30,7 +30,7 @@ BEGIN
         ),
         body := jsonb_build_object(
             'from', 'GarageVault Signups <onboarding@resend.dev>',
-            'to', ARRAY['support@garagevault.app'],
+            'to', ARRAY['cass.miecz@gmail.com'],
             'subject', '🚨 NEW SIGNUP - GarageVault Launch Notification',
             'html', '<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
                 <h2 style="color: #4a7c9e;">🎉 NEW SIGNUP RECEIVED!</h2>

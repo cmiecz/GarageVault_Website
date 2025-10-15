@@ -52,7 +52,7 @@ BEGIN
         ),
         body := jsonb_build_object(
             'from', 'GarageVault Signups <onboarding@resend.dev>',
-            'to', ARRAY['support@garagevault.app'],
+            'to', ARRAY['cass.miecz@gmail.com'],
             'subject', '🚨 NEW SIGNUP - GarageVault Launch Notification',
             'html', '<h2>🎉 NEW SIGNUP RECEIVED!</h2><p><strong>Email:</strong> ' || NEW.email || '</p><p><strong>Source:</strong> ' || NEW.source || '</p><p><strong>Timestamp:</strong> ' || NEW.created_at || '</p><p>This person wants to be notified when GarageVault launches!</p>'
         )
