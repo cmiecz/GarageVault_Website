@@ -238,7 +238,7 @@
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
 <button id="header-beta-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Beta Access</span>
+<span class="truncate">Get Notified</span>
 </button>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -255,7 +255,7 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
 <button id="mobile-beta-btn" class="mt-2 h-12 w-full rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Beta Access</span>
+<span class="truncate">Get Notified</span>
 </button>
 </nav>
 </div>
@@ -271,9 +271,9 @@
 <div class="mt-2 sm:mt-4 lg:mt-6">
 <div class="max-w-md mx-auto sm:mx-0">
 <form id="beta-signup-form" class="flex flex-col sm:flex-row gap-3">
-<input type="email" id="beta-email" placeholder="Enter your email for beta access" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+<input type="email" id="beta-email" placeholder="Enter your email to get notified" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
 <button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
-<span class="truncate">Get Beta Access</span>
+<span class="truncate">Get Notified</span>
 </button>
 </form>
 <p class="text-sm text-accent-light mt-2 text-center sm:text-left">Be the first to know when GarageVault launches!</p>
@@ -744,12 +744,12 @@ Start Free Trial
 <div class="mt-6 sm:mt-8 lg:mt-10">
 <div class="max-w-md mx-auto">
 <form id="bottom-beta-signup-form" class="flex flex-col sm:flex-row gap-3">
-<input type="email" id="bottom-beta-email" placeholder="Enter your email for beta access" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+<input type="email" id="bottom-beta-email" placeholder="Enter your email to get notified" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
 <button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-8 sm:px-10 text-base sm:text-lg lg:text-xl font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
-<span class="truncate">Get Beta Access</span>
+<span class="truncate">Get Notified</span>
 </button>
 </form>
-<p class="text-sm text-accent-light mt-2 text-center">Join the beta waitlist today!</p>
+<p class="text-sm text-accent-light mt-2 text-center">Get notified when we launch!</p>
 </div>
 </div>
 </section>
@@ -812,8 +812,8 @@ window.addEventListener('resize', () => {
 // Beta signup form handling
 function handleBetaSignup(email, formId) {
     // Send email to you (you'll need to replace this with your actual email)
-    const subject = encodeURIComponent('New Beta Signup - GarageVault');
-    const body = encodeURIComponent(`New beta signup from GarageVault website:\n\nEmail: ${email}\nTimestamp: ${new Date().toLocaleString()}\nForm: ${formId}`);
+    const subject = encodeURIComponent('New Launch Notification Signup - GarageVault');
+    const body = encodeURIComponent(`New launch notification signup from GarageVault website:\n\nEmail: ${email}\nTimestamp: ${new Date().toLocaleString()}\nForm: ${formId}`);
     const mailtoLink = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
     
     // Open email client (fallback method)
@@ -824,7 +824,7 @@ function handleBetaSignup(email, formId) {
     
     // Track signup event in Google Analytics
     if (typeof gtag !== 'undefined') {
-        gtag('event', 'beta_signup', {
+        gtag('event', 'launch_notification_signup', {
             'event_category': 'engagement',
             'event_label': formId,
             'value': 1
@@ -832,7 +832,7 @@ function handleBetaSignup(email, formId) {
     }
     
     // Log to console for debugging
-    console.log('Beta signup:', { email, formId, timestamp: new Date().toISOString() });
+    console.log('Launch notification signup:', { email, formId, timestamp: new Date().toISOString() });
 }
 
 function showSuccessMessage(formId) {
