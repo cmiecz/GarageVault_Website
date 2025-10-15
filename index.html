@@ -333,6 +333,8 @@
 <div class="max-w-md mx-auto sm:mx-0">
 <form id="beta-signup-form" class="flex flex-col sm:flex-row gap-3">
 <input type="email" id="beta-email" placeholder="Enter your email to get notified" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+<!-- Honeypot field for spam prevention (hidden from users) -->
+<input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;" aria-hidden="true">
 <button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
 <span class="truncate">Get Notified</span>
 </button>
@@ -806,6 +808,8 @@ Start Free Trial
 <div class="max-w-md mx-auto">
 <form id="bottom-beta-signup-form" class="flex flex-col sm:flex-row gap-3">
 <input type="email" id="bottom-beta-email" placeholder="Enter your email to get notified" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+<!-- Honeypot field for spam prevention (hidden from users) -->
+<input type="text" name="website_bottom" id="website_bottom" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;" aria-hidden="true">
 <button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-8 sm:px-10 text-base sm:text-lg lg:text-xl font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
 <span class="truncate">Get Notified</span>
 </button>
@@ -1018,8 +1022,15 @@ function showSuccessMessage(formId, customMessage = null) {
 document.getElementById('beta-signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const email = document.getElementById('beta-email').value.trim();
+    const honeypot = document.getElementById('website').value;
     const submitBtn = this.querySelector('button[type="submit"]');
     const form = this;
+    
+    // Honeypot spam check - if filled, it's a bot
+    if (honeypot) {
+        console.log('Spam submission blocked by honeypot');
+        return false;
+    }
     
     if (email) {
         // Show loading state
@@ -1044,8 +1055,15 @@ document.getElementById('beta-signup-form').addEventListener('submit', async fun
 document.getElementById('bottom-beta-signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const email = document.getElementById('bottom-beta-email').value.trim();
+    const honeypot = document.getElementById('website_bottom').value;
     const submitBtn = this.querySelector('button[type="submit"]');
     const form = this;
+    
+    // Honeypot spam check - if filled, it's a bot
+    if (honeypot) {
+        console.log('Spam submission blocked by honeypot');
+        return false;
+    }
     
     if (email) {
         // Show loading state
