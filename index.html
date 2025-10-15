@@ -111,6 +111,66 @@
             max-height: 500px;
         }
         
+        
+        /* Success Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #4a7c9e 0%, #3d5a6e 100%);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            animation: scaleIn 0.3s ease-out 0.1s forwards;
+            text-align: center;
+        }
+        
+        @keyframes scaleIn {
+            to { transform: scale(1); }
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(74, 222, 128, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            animation: bounceIn 0.6s ease-out 0.2s both;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-checkmark {
+            color: #4ade80;
+            font-size: 3rem;
+        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -901,29 +961,53 @@ Sent automatically from GarageVault website
 }
 
 function showSuccessMessage(formId, customMessage = null) {
-    const form = document.getElementById(formId);
-    const successDiv = document.createElement('div');
-    successDiv.className = 'mt-4 p-6 rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 text-center animate-pulse';
-    successDiv.innerHTML = `
-        <div class="flex items-center justify-center mb-2">
-            <svg class="w-8 h-8 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span class="text-lg font-semibold">Successfully Submitted!</span>
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="success-icon">
+                <svg class="success-checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
+                Thank You!
+            </h2>
+            <p class="text-lg sm:text-xl text-accent-light mb-6">
+                ${customMessage || 'We\'ll notify you when GarageVault launches!'}
+            </p>
+            <p class="text-sm text-text-dark mb-6">
+                Keep an eye on your inbox for exciting updates about GarageVault.
+            </p>
+            <button onclick="this.closest('.modal-overlay').remove()" class="px-8 py-3 bg-accent hover:bg-accent-light text-white font-bold rounded-lg transition-all shadow-lg transform hover:scale-105">
+                Got It!
+            </button>
         </div>
-        <p class="text-sm">${customMessage || '✅ Thanks! We\'ll notify you when GarageVault is ready.'}</p>
     `;
     
-    // Replace form with success message
-    form.parentNode.replaceChild(successDiv, form);
+    // Add modal to page
+    document.body.appendChild(modal);
     
-    // Scroll to success message
-    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Close modal when clicking overlay
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
     
-    // Add a subtle animation
+    // Auto-close after 5 seconds
     setTimeout(() => {
-        successDiv.classList.remove('animate-pulse');
-    }, 2000);
+        if (modal.parentNode) {
+            modal.remove();
+        }
+    }, 5000);
+    
+    // Also clear the form
+    const form = document.getElementById(formId);
+    if (form) {
+        form.reset();
+    }
 }
 
 // Handle main hero form
