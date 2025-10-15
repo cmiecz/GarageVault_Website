@@ -1011,49 +1011,57 @@ function showSuccessMessage(formId, customMessage = null) {
             modal.remove();
         }
     }, 5000);
-    
-    // Also clear the form
-    const form = document.getElementById(formId);
-    if (form) {
-        form.reset();
-    }
 }
 
 // Handle main hero form
-document.getElementById('beta-signup-form').addEventListener('submit', function(e) {
+document.getElementById('beta-signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const email = document.getElementById('beta-email').value.trim();
     const submitBtn = this.querySelector('button[type="submit"]');
+    const form = this;
     
     if (email) {
         // Show loading state
         submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
         submitBtn.disabled = true;
         
-        handleBetaSignup(email, 'hero-form').finally(() => {
+        try {
+            await handleBetaSignup(email, 'hero-form');
+            // Clear form after successful submission
+            form.reset();
+        } catch (error) {
+            console.error('Form submission error:', error);
+        } finally {
             // Reset button state
             submitBtn.innerHTML = '<span class="truncate">Get Notified</span>';
             submitBtn.disabled = false;
-        });
+        }
     }
 });
 
 // Handle bottom form
-document.getElementById('bottom-beta-signup-form').addEventListener('submit', function(e) {
+document.getElementById('bottom-beta-signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
     const email = document.getElementById('bottom-beta-email').value.trim();
     const submitBtn = this.querySelector('button[type="submit"]');
+    const form = this;
     
     if (email) {
         // Show loading state
         submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
         submitBtn.disabled = true;
         
-        handleBetaSignup(email, 'bottom-form').finally(() => {
+        try {
+            await handleBetaSignup(email, 'bottom-form');
+            // Clear form after successful submission
+            form.reset();
+        } catch (error) {
+            console.error('Form submission error:', error);
+        } finally {
             // Reset button state
             submitBtn.innerHTML = '<span class="truncate">Get Notified</span>';
             submitBtn.disabled = false;
-        });
+        }
     }
 });
 
