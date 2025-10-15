@@ -837,6 +837,9 @@ async function handleBetaSignup(email, formId) {
             // Success - show success message
             showSuccessMessage(formId);
             
+            // Send immediate notification email to you
+            sendNotificationEmail(email, formId);
+            
             // Track signup event in Google Analytics
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'launch_notification_signup', {
@@ -868,25 +871,77 @@ async function handleBetaSignup(email, formId) {
     }
 }
 
+// Send immediate notification email to you
+function sendNotificationEmail(email, formId) {
+    const subject = encodeURIComponent('🚨 NEW SIGNUP - GarageVault Launch Notification');
+    const body = encodeURIComponent(`🎉 NEW SIGNUP RECEIVED!
+
+Email: ${email}
+Form: ${formId}
+Timestamp: ${new Date().toLocaleString()}
+User Agent: ${navigator.userAgent}
+IP: ${window.location.hostname}
+
+This person wants to be notified when GarageVault launches!
+
+---
+Sent automatically from GarageVault website
+`);
+    
+    // Create a hidden iframe to send the email without redirecting
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
+    document.body.appendChild(iframe);
+    
+    // Remove iframe after a short delay
+    setTimeout(() => {
+        document.body.removeChild(iframe);
+    }, 1000);
+}
+
 function showSuccessMessage(formId, customMessage = null) {
     const form = document.getElementById(formId);
     const successDiv = document.createElement('div');
-    successDiv.className = 'mt-4 p-4 rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 text-center';
-    successDiv.innerHTML = customMessage || '✅ Thanks! We\'ll notify you when GarageVault is ready.';
+    successDiv.className = 'mt-4 p-6 rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 text-center animate-pulse';
+    successDiv.innerHTML = `
+        <div class="flex items-center justify-center mb-2">
+            <svg class="w-8 h-8 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-lg font-semibold">Successfully Submitted!</span>
+        </div>
+        <p class="text-sm">${customMessage || '✅ Thanks! We\'ll notify you when GarageVault is ready.'}</p>
+    `;
     
     // Replace form with success message
     form.parentNode.replaceChild(successDiv, form);
     
     // Scroll to success message
     successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Add a subtle animation
+    setTimeout(() => {
+        successDiv.classList.remove('animate-pulse');
+    }, 2000);
 }
 
 // Handle main hero form
 document.getElementById('beta-signup-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const email = document.getElementById('beta-email').value.trim();
+    const submitBtn = this.querySelector('button[type="submit"]');
+    
     if (email) {
-        handleBetaSignup(email, 'hero-form');
+        // Show loading state
+        submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
+        submitBtn.disabled = true;
+        
+        handleBetaSignup(email, 'hero-form').finally(() => {
+            // Reset button state
+            submitBtn.innerHTML = '<span class="truncate">Get Notified</span>';
+            submitBtn.disabled = false;
+        });
     }
 });
 
@@ -894,8 +949,18 @@ document.getElementById('beta-signup-form').addEventListener('submit', function(
 document.getElementById('bottom-beta-signup-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const email = document.getElementById('bottom-beta-email').value.trim();
+    const submitBtn = this.querySelector('button[type="submit"]');
+    
     if (email) {
-        handleBetaSignup(email, 'bottom-form');
+        // Show loading state
+        submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
+        submitBtn.disabled = true;
+        
+        handleBetaSignup(email, 'bottom-form').finally(() => {
+            // Reset button state
+            submitBtn.innerHTML = '<span class="truncate">Get Notified</span>';
+            submitBtn.disabled = false;
+        });
     }
 });
 
