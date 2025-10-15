@@ -809,37 +809,70 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Beta signup form handling
-function handleBetaSignup(email, formId) {
-    // Send email to you (you'll need to replace this with your actual email)
-    const subject = encodeURIComponent('New Launch Notification Signup - GarageVault');
-    const body = encodeURIComponent(`New launch notification signup from GarageVault website:\n\nEmail: ${email}\nTimestamp: ${new Date().toLocaleString()}\nForm: ${formId}`);
-    const mailtoLink = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
-    
-    // Open email client (fallback method)
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    showSuccessMessage(formId);
-    
-    // Track signup event in Google Analytics
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'launch_notification_signup', {
-            'event_category': 'engagement',
-            'event_label': formId,
-            'value': 1
+// Supabase configuration
+const SUPABASE_URL = 'https://zvrgncarhlvhxntbndkx.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2cmduY2FyaGx2aHhudGJuZGt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzMDk4MTIsImV4cCI6MjA3NDg4NTgxMn0.7rM9tkuELzH7g3oBsr4Y5mwywufGt5oWQGtI2navscM';
+
+// Launch notification signup handling
+async function handleBetaSignup(email, formId) {
+    try {
+        // Store in Supabase database
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/signups`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'apikey': SUPABASE_ANON_KEY,
+                'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+                email: email,
+                source: formId,
+                user_agent: navigator.userAgent,
+                created_at: new Date().toISOString()
+            })
         });
+
+        if (response.ok) {
+            // Success - show success message
+            showSuccessMessage(formId);
+            
+            // Track signup event in Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'launch_notification_signup', {
+                    'event_category': 'engagement',
+                    'event_label': formId,
+                    'value': 1
+                });
+            }
+            
+            console.log('Launch notification signup successful:', { email, formId, timestamp: new Date().toISOString() });
+        } else {
+            // Handle duplicate email or other errors
+            const errorData = await response.json();
+            if (response.status === 409) {
+                // Email already exists
+                showSuccessMessage(formId, 'You\'re already signed up! We\'ll notify you when we launch.');
+            } else {
+                throw new Error(errorData.message || 'Signup failed');
+            }
+        }
+    } catch (error) {
+        console.error('Signup error:', error);
+        // Fallback to email method if Supabase fails
+        const subject = encodeURIComponent('New Launch Notification Signup - GarageVault');
+        const body = encodeURIComponent(`New launch notification signup from GarageVault website:\n\nEmail: ${email}\nTimestamp: ${new Date().toLocaleString()}\nForm: ${formId}\nError: ${error.message}`);
+        const mailtoLink = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+        showSuccessMessage(formId);
     }
-    
-    // Log to console for debugging
-    console.log('Launch notification signup:', { email, formId, timestamp: new Date().toISOString() });
 }
 
-function showSuccessMessage(formId) {
+function showSuccessMessage(formId, customMessage = null) {
     const form = document.getElementById(formId);
     const successDiv = document.createElement('div');
     successDiv.className = 'mt-4 p-4 rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 text-center';
-    successDiv.innerHTML = '✅ Thanks! We\'ll notify you when GarageVault is ready.';
+    successDiv.innerHTML = customMessage || '✅ Thanks! We\'ll notify you when GarageVault is ready.';
     
     // Replace form with success message
     form.parentNode.replaceChild(successDiv, form);
