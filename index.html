@@ -237,8 +237,8 @@
 <a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-<button class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Download App</span>
+<button id="header-beta-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get Beta Access</span>
 </button>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,8 +254,8 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#features">Features</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
-<button class="mt-2 h-12 w-full rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Download App</span>
+<button id="mobile-beta-btn" class="mt-2 h-12 w-full rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get Beta Access</span>
 </button>
 </nav>
 </div>
@@ -269,9 +269,15 @@
 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold tracking-tight leading-tight">Never Buy Duplicates Again</h1>
 <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-accent-light leading-relaxed">AI-powered garage organization that tracks your inventory and reminds you what to buy when you're near hardware stores.</p>
 <div class="mt-2 sm:mt-4 lg:mt-6">
-<button class="h-12 sm:h-14 rounded-lg bg-accent px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl transition-colors hover:bg-accent-light w-full sm:w-auto">
-<span class="truncate">Download for iOS</span>
+<div class="max-w-md mx-auto sm:mx-0">
+<form id="beta-signup-form" class="flex flex-col sm:flex-row gap-3">
+<input type="email" id="beta-email" placeholder="Enter your email for beta access" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+<button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
+<span class="truncate">Get Beta Access</span>
 </button>
+</form>
+<p class="text-sm text-accent-light mt-2 text-center sm:text-left">Be the first to know when GarageVault launches!</p>
+</div>
 </div>
 </div>
 </div>
@@ -736,9 +742,15 @@ Start Free Trial
 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-text-light">Ready to Transform Your Garage?</h2>
 <p class="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-accent-light max-w-3xl mx-auto">Join thousands of DIY enthusiasts and never buy duplicate tools again.</p>
 <div class="mt-6 sm:mt-8 lg:mt-10">
-<button class="h-12 sm:h-14 rounded-lg bg-accent px-8 sm:px-10 text-base sm:text-lg lg:text-xl font-bold text-white shadow-xl transition-colors hover:bg-accent-light w-full sm:w-auto">
-<span class="truncate">Download for iOS</span>
+<div class="max-w-md mx-auto">
+<form id="bottom-beta-signup-form" class="flex flex-col sm:flex-row gap-3">
+<input type="email" id="bottom-beta-email" placeholder="Enter your email for beta access" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
+<button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-8 sm:px-10 text-base sm:text-lg lg:text-xl font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
+<span class="truncate">Get Beta Access</span>
 </button>
+</form>
+<p class="text-sm text-accent-light mt-2 text-center">Join the beta waitlist today!</p>
+</div>
 </div>
 </section>
 </div>
@@ -795,6 +807,82 @@ window.addEventListener('resize', () => {
         menuIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
     }
+});
+
+// Beta signup form handling
+function handleBetaSignup(email, formId) {
+    // Send email to you (you'll need to replace this with your actual email)
+    const subject = encodeURIComponent('New Beta Signup - GarageVault');
+    const body = encodeURIComponent(`New beta signup from GarageVault website:\n\nEmail: ${email}\nTimestamp: ${new Date().toLocaleString()}\nForm: ${formId}`);
+    const mailtoLink = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
+    
+    // Open email client (fallback method)
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    showSuccessMessage(formId);
+    
+    // Track signup event in Google Analytics
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'beta_signup', {
+            'event_category': 'engagement',
+            'event_label': formId,
+            'value': 1
+        });
+    }
+    
+    // Log to console for debugging
+    console.log('Beta signup:', { email, formId, timestamp: new Date().toISOString() });
+}
+
+function showSuccessMessage(formId) {
+    const form = document.getElementById(formId);
+    const successDiv = document.createElement('div');
+    successDiv.className = 'mt-4 p-4 rounded-lg bg-green-500/20 border border-green-500/30 text-green-300 text-center';
+    successDiv.innerHTML = '✅ Thanks! We\'ll notify you when GarageVault is ready.';
+    
+    // Replace form with success message
+    form.parentNode.replaceChild(successDiv, form);
+    
+    // Scroll to success message
+    successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Handle main hero form
+document.getElementById('beta-signup-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('beta-email').value.trim();
+    if (email) {
+        handleBetaSignup(email, 'hero-form');
+    }
+});
+
+// Handle bottom form
+document.getElementById('bottom-beta-signup-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('bottom-beta-email').value.trim();
+    if (email) {
+        handleBetaSignup(email, 'bottom-form');
+    }
+});
+
+// Handle header and mobile beta buttons (scroll to hero form)
+document.getElementById('header-beta-btn').addEventListener('click', function() {
+    document.getElementById('beta-email').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('beta-email').focus();
+});
+
+document.getElementById('mobile-beta-btn').addEventListener('click', function() {
+    // Close mobile menu first
+    mobileMenu.classList.remove('open');
+    menuIcon.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+    
+    // Then scroll to form
+    setTimeout(() => {
+        document.getElementById('beta-email').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById('beta-email').focus();
+    }, 300);
 });
 </script>
 </body></html>
