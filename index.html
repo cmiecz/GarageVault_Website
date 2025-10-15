@@ -974,6 +974,16 @@ Sent automatically from GarageVault website
 function showSuccessMessage(formId, customMessage = null) {
     console.log('showSuccessMessage called with formId:', formId);
     
+    // Track thank_you event in Google Analytics
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'thank_you', {
+            'event_category': 'engagement',
+            'event_label': formId,
+            'value': 1
+        });
+        console.log('Thank you event tracked:', formId);
+    }
+    
     // Create modal overlay
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
