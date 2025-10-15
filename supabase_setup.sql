@@ -48,7 +48,7 @@ BEGIN
         url := 'https://api.resend.com/emails',
         headers := jsonb_build_object(
             'Content-Type', 'application/json',
-            'Authorization', 'Bearer re_8MrgvSAw_JbhLX3CzjtP5ZZ63DnUSFjMH'
+            'Authorization', 'Bearer YOUR_RESEND_API_KEY_HERE'
         ),
         body := jsonb_build_object(
             'from', 'GarageVault Signups <onboarding@resend.dev>',
