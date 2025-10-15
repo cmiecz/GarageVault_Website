@@ -48,10 +48,10 @@ BEGIN
         url := 'https://api.resend.com/emails',
         headers := jsonb_build_object(
             'Content-Type', 'application/json',
-            'Authorization', 'Bearer YOUR_RESEND_API_KEY_HERE'
+            'Authorization', 'Bearer re_8MrgvSAw_JbhLX3CzjtP5ZZ63DnUSFjMH'
         ),
         body := jsonb_build_object(
-            'from', 'GarageVault <onboarding@resend.dev>',
+            'from', 'GarageVault Signups <onboarding@resend.dev>',
             'to', ARRAY['support@garagevault.app'],
             'subject', '🚨 NEW SIGNUP - GarageVault Launch Notification',
             'html', '<h2>🎉 NEW SIGNUP RECEIVED!</h2><p><strong>Email:</strong> ' || NEW.email || '</p><p><strong>Source:</strong> ' || NEW.source || '</p><p><strong>Timestamp:</strong> ' || NEW.created_at || '</p><p>This person wants to be notified when GarageVault launches!</p>'
