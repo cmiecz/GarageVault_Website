@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta name='impact-site-verification' value='4be02444-35c1-4d2e-ac51-1e41089aec06' />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0N36H0LXYX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0N36H0LXYX');
+  
+  // Debug: Log when GTM loads
+  console.log('Google Tag Manager loaded with ID: G-0N36H0LXYX');
+  
+  // Send page view event
+  gtag('event', 'page_view', {
+    page_title: document.title,
+    page_location: window.location.href
+  });
+</script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#4a7c9e"/>
+<meta name="language" content="en"/>
+<meta name="locale" content="en_US"/>
+<link rel="canonical" href="https://garagevault.app/support/maintenance-calendar-export.html"/>
+
+<title>Maintenance Calendar Export - How It Works | Garage Vault Support</title>
+<meta name="description" content="A complete guide to tracking equipment maintenance and exporting schedules to your calendar. Learn how to sync maintenance reminders with Google Calendar, Apple Calendar, and more."/>
+<meta name="keywords" content="garage vault maintenance calendar, equipment maintenance tracking, calendar export, maintenance schedules, service reminders"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://garagevault.app/support/maintenance-calendar-export.html"/>
+<meta property="og:title" content="Maintenance Calendar Export - How It Works | Garage Vault Support"/>
+<meta property="og:description" content="A complete guide to tracking equipment maintenance and exporting schedules to your calendar."/>
+<meta property="og:image" content="https://garagevault.app/hero.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="GarageVault"/>
+<meta property="og:locale" content="en_US"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://garagevault.app/support/maintenance-calendar-export.html"/>
+<meta property="twitter:title" content="Maintenance Calendar Export - How It Works | Garage Vault Support"/>
+<meta property="twitter:description" content="A complete guide to tracking equipment maintenance and exporting schedules to your calendar."/>
+<meta property="twitter:image" content="https://garagevault.app/hero.jpg"/>
+
+<link href="../../ICON_Transparent 2 Background Removed.png" rel="icon" type="image/png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4a7c9e",
+            "primary-light": "#5a8cae",
+            "primary-dark": "#3d5a6e",
+            "accent": "#2196F3",
+            "accent-light": "#42A5F5",
+            "accent-orange": "#f5a623",
+            "background-light": "#f5f5f5",
+            "background-dark": "#1a202c",
+            "metallic-dark": "#2c3e50",
+            "text-light": "#F5F5F5",
+            "text-dark": "#CDCDCD",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Table of contents styling */
+        .toc-link {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #CDCDCD;
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .toc-link:hover {
+            color: #42A5F5;
+            border-left-color: #42A5F5;
+            background-color: rgba(66, 165, 245, 0.1);
+        }
+        
+        /* Code block styling */
+        pre code {
+            display: block;
+            padding: 1rem;
+            background: #2c3e50;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-light font-body">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full bg-primary-dark/90 backdrop-blur-sm shadow-lg">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-16 sm:h-20 items-center justify-between border-b border-primary/30">
+<div class="flex items-center gap-2 sm:gap-3">
+<a href="../../index.html" class="flex items-center gap-2 sm:gap-3">
+<img src="../../ICON_Transparent 2 Background Removed.png" alt="GarageVault - AI-powered garage organization app logo with padlock and wrench icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
+<div>
+<h2 class="text-lg sm:text-xl md:text-2xl font-display font-bold text-text-light">GarageVault</h2>
+<p class="text-xs text-text-dark hidden sm:block">Inventory Unlocked</p>
+</div>
+</a>
+</div>
+<nav class="hidden lg:flex items-center gap-6 lg:gap-10">
+<a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#features">Features</a>
+<a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#pricing">Pricing</a>
+<a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#testimonials">Reviews</a>
+<a class="text-base lg:text-lg font-medium text-accent-light transition-colors" href="index.html">Support</a>
+</nav>
+<div class="flex items-center gap-2 sm:gap-4">
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Download App</span>
+</a>
+<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+<path class="close-icon hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu lg:hidden">
+<nav class="flex flex-col gap-4 py-6 border-b border-primary/30">
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#features">Features</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#pricing">Pricing</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#testimonials">Reviews</a>
+<a class="text-lg font-medium text-accent-light transition-colors" href="index.html">Support</a>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Download App</span>
+</a>
+</nav>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+<div class="max-w-4xl mx-auto">
+<!-- Back to Support Link -->
+<a href="index.html" class="inline-flex items-center gap-2 text-accent-light hover:text-accent mb-8 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Back to Support</span>
+</a>
+
+<!-- Header -->
+<div class="mb-12">
+<h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-text-light mb-4">Maintenance Calendar Export - How It Works</h1>
+<p class="text-base sm:text-lg text-text-dark">A complete guide to tracking equipment maintenance and exporting schedules to your calendar.</p>
+</div>
+
+<!-- Table of Contents -->
+<div class="rounded-xl sm:rounded-2xl bg-primary-dark/40 border border-primary/30 p-6 sm:p-8 mb-12">
+<h2 class="text-2xl font-display font-bold text-text-light mb-6">Table of Contents</h2>
+<nav class="space-y-2">
+<a href="#what-is-calendar-export" class="toc-link">1. What is Maintenance Calendar Export?</a>
+<a href="#understanding-sections" class="toc-link">2. Understanding Maintenance Sections</a>
+<a href="#setting-up" class="toc-link">3. Setting Up Maintenance Tracking</a>
+<a href="#logging-maintenance" class="toc-link">4. Logging Completed Maintenance</a>
+<a href="#exporting-calendar" class="toc-link">5. Exporting to Your Calendar</a>
+<a href="#how-sections-work" class="toc-link">6. How the Sections Work Together</a>
+<a href="#dashboard-integration" class="toc-link">7. Dashboard Integration</a>
+<a href="#maintenance-parts" class="toc-link">8. Maintenance Parts Tracking</a>
+<a href="#best-practices" class="toc-link">9. Best Practices</a>
+<a href="#advanced-features" class="toc-link">10. Advanced Features</a>
+<a href="#troubleshooting" class="toc-link">11. Troubleshooting</a>
+<a href="#quick-reference" class="toc-link">12. Quick Reference</a>
+<a href="#need-help" class="toc-link">13. Need Help?</a>
+</nav>
+</div>
+
+<!-- Main Content -->
+<div class="prose prose-invert max-w-none">
+<!-- What is Maintenance Calendar Export -->
+<section id="what-is-calendar-export" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">What is Maintenance Calendar Export?</h2>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">The Maintenance Calendar Export feature lets you sync your equipment maintenance schedules to your phone's calendar app (Google Calendar, Apple Calendar, Outlook, etc.). This ensures you never miss important maintenance tasks like oil changes, blade sharpening, or equipment servicing.</p>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Benefits:</h3>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Get calendar notifications for upcoming maintenance</li>
+<li>See maintenance alongside your other appointments</li>
+<li>Share maintenance schedules with family members via shared calendars</li>
+<li>Never forget critical equipment servicing</li>
+</ul>
+</section>
+
+<!-- Understanding Maintenance Sections -->
+<section id="understanding-sections" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Understanding Maintenance Sections</h2>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">Garage Vault has several interconnected sections for managing equipment maintenance:</p>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">1. Maintenance Tracking (Service History)</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Records of maintenance you've already completed:</p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Past service records</li>
+<li>What was done</li>
+<li>When it was done</li>
+<li>Who did it</li>
+<li>Costs</li>
+</ul>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">2. Maintenance Schedules (Future Maintenance)</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Recurring maintenance tasks that need to be done:</p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Custom schedules you create</li>
+<li>Set intervals (every 90, 180, 365 days)</li>
+<li>Next service due dates</li>
+<li>Automatic calculations</li>
+</ul>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">3. Upcoming Maintenance Dashboard</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Quick overview card showing what's due soon:</p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Items needing service in the next 30 days</li>
+<li>Overdue maintenance</li>
+<li>Color-coded urgency</li>
+</ul>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">4. Calendar Export</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Syncs your maintenance schedules to external calendar apps:</p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Export individual items or all equipment</li>
+<li>Automatic updates when schedules change</li>
+<li>Integration with your phone's calendar</li>
+</ul>
+</section>
+
+<!-- Setting Up Maintenance Tracking -->
+<section id="setting-up" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Setting Up Maintenance Tracking</h2>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Step 1: Add Equipment to Track</h3>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Go to <strong>Inventory</strong></li>
+<li>Find or add an equipment item (Lawn Mower, Snow Blower, Chainsaw, etc.)</li>
+<li>Make sure the category is set to <strong>"Equipment"</strong> or <strong>"Tools"</strong></li>
+<li>Save the item</li>
+</ol>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Step 2: Create a Maintenance Schedule</h3>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Open the equipment item</li>
+<li>Scroll to <strong>"Maintenance"</strong> section</li>
+<li>Tap <strong>"Add Maintenance Schedule"</strong> or <strong>"Create Schedule"</strong></li>
+<li>Fill in the details:</li>
+</ol>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-3"><strong>Maintenance Task:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Task name (e.g., "Oil Change", "Blade Sharpening", "Air Filter Replacement")</li>
+<li>Description of what needs to be done</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-3"><strong>Interval:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Select how often (90 days, 180 days, 365 days, custom)</li>
+<li>Or set by hours/mileage (e.g., every 50 hours, every 3,000 miles)</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-3"><strong>Last Completed:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>When was this maintenance last done?</li>
+<li>The app calculates the next due date from this</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-3"><strong>Cost Estimates (Optional):</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Estimated parts cost</li>
+<li>Estimated labor cost</li>
+<li>Helps budget for upcoming maintenance</li>
+</ul>
+</div>
+
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4" start="5">
+<li>Tap <strong>"Save"</strong></li>
+</ol>
+
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">The app now automatically tracks when this maintenance is due next!</p>
+</section>
+
+<!-- Logging Completed Maintenance -->
+<section id="logging-maintenance" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Logging Completed Maintenance</h2>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">When you complete a maintenance task:</p>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Open the equipment item</li>
+<li>Go to <strong>"Maintenance"</strong> section</li>
+<li>Find the maintenance task</li>
+<li>Tap <strong>"Log Service"</strong> or <strong>"Mark Complete"</strong></li>
+<li>Fill in the service record:
+   <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+   <li><strong>Date Completed</strong> (defaults to today)</li>
+   <li><strong>Service Provider</strong> (yourself, shop name, mechanic)</li>
+   <li><strong>Actual Costs</strong> (parts and labor)</li>
+   <li><strong>Mileage/Hours</strong> (if applicable)</li>
+   <li><strong>Service Notes</strong> (what was done, issues found, parts replaced)</li>
+   <li><strong>Before/After Photos</strong> (document the work)</li>
+   </ul>
+</li>
+<li>Tap <strong>"Save"</strong></li>
+</ol>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">What Happens Next:</h3>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>The service record is saved to history</li>
+<li>Next service due date is automatically calculated</li>
+<li>Calendar export is updated with new date</li>
+<li>Dashboard shows updated "upcoming maintenance"</li>
+</ul>
+</section>
+
+<!-- Exporting to Your Calendar -->
+<section id="exporting-calendar" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Exporting to Your Calendar</h2>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">How to Export Maintenance Schedules</h3>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Go to <strong>Settings</strong> → <strong>Maintenance</strong> → <strong>Calendar Export</strong>
+   
+   OR
+   
+   Open an equipment item → <strong>Maintenance</strong> → <strong>"Export to Calendar"</strong></li>
+<li>Choose what to export:
+   <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+   <li><strong>Single Item</strong> - Export one piece of equipment's maintenance</li>
+   <li><strong>All Equipment</strong> - Export maintenance for everything</li>
+   <li><strong>Selected Items</strong> - Choose specific equipment</li>
+   </ul>
+</li>
+<li>Select export options:
+   <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+   <li><strong>Calendar App</strong> (let the app detect your default calendar)</li>
+   <li><strong>Advance Notice</strong> (how many days before to show reminder)</li>
+   <li><strong>Repeat Settings</strong> (one-time vs recurring events)</li>
+   </ul>
+</li>
+<li>Tap <strong>"Export"</strong></li>
+<li>Your phone will open the calendar app:
+   <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+   <li>Review the maintenance events</li>
+   <li>Choose which calendar to add them to</li>
+   <li>Confirm the export</li>
+   </ul>
+</li>
+</ol>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">What Gets Exported</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Each maintenance schedule creates a calendar event with:</p>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-4">
+<p class="text-text-light font-semibold mb-2"><strong>Event Title:</strong></p>
+<p class="text-text-dark">Equipment name + Maintenance task<br>Example: "Lawn Mower - Oil Change"</p>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-4">
+<p class="text-text-light font-semibold mb-2"><strong>Event Date:</strong></p>
+<p class="text-text-dark">Next service due date</p>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-4">
+<p class="text-text-light font-semibold mb-2"><strong>Event Details:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Task description</li>
+<li>Last service date</li>
+<li>Estimated cost</li>
+<li>Link back to Garage Vault item</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-4">
+<p class="text-text-light font-semibold mb-2"><strong>Reminders:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Notification 1 week before (customizable)</li>
+<li>Notification 1 day before (customizable)</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-2"><strong>Recurring:</strong></p>
+<p class="text-text-dark">Automatically repeats based on your maintenance interval<br>Example: Oil change every 180 days = calendar event every 6 months</p>
+</div>
+</section>
+
+<!-- How Sections Work Together -->
+<section id="how-sections-work" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">How the Sections Work Together</h2>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">Here's how everything connects:</p>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">The Maintenance Cycle</h3>
+<pre class="bg-metallic-dark rounded-lg p-4 mb-6 overflow-x-auto"><code class="text-text-light">1. CREATE SCHEDULE
+
+   ↓
+
+   Set intervals and tasks
+
+   ↓
+
+2. EXPORT TO CALENDAR
+
+   ↓
+
+   Sync with phone calendar
+
+   ↓
+
+3. GET REMINDERS
+
+   ↓
+
+   Calendar notifies you when due
+
+   ↓
+
+4. PERFORM MAINTENANCE
+
+   ↓
+
+   Do the work or take to shop
+
+   ↓
+
+5. LOG SERVICE RECORD
+
+   ↓
+
+   Record what was done, costs, photos
+
+   ↓
+
+6. AUTOMATIC UPDATE
+
+   ↓
+
+   Next due date calculated
+
+   Calendar export updated
+
+   Dashboard refreshed
+
+   ↓
+
+REPEAT CYCLE</code></pre>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Example: Lawn Mower Maintenance</h3>
+
+<div class="space-y-4 mb-6">
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>January 15 - Initial Setup:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Add lawn mower to inventory</li>
+<li>Create maintenance schedule: "Oil Change every 180 days"</li>
+<li>Last completed: January 15</li>
+<li>Next due: July 14 (auto-calculated)</li>
+<li>Export to calendar</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Your Calendar Shows:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Event on July 14: "Lawn Mower - Oil Change"</li>
+<li>Reminder on July 7 (1 week before)</li>
+<li>Reminder on July 13 (1 day before)</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>July 10 - Perform Maintenance:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Get reminder notification</li>
+<li>Change the oil</li>
+<li>Log service record in Garage Vault</li>
+<li>Add photos, notes, costs</li>
+</ul>
+</div>
+
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Automatic Updates:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Next due date: January 6 (180 days later)</li>
+<li>Calendar event updates to January 6</li>
+<li>Dashboard shows next service in 180 days</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Dashboard Integration -->
+<section id="dashboard-integration" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Dashboard Integration</h2>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Upcoming Maintenance Card</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Your dashboard shows an <strong>"Upcoming Maintenance"</strong> card that displays:</p>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Color Coding:</h3>
+<div class="space-y-3 mb-6">
+<div class="flex items-center gap-3">
+<span class="text-2xl">🔴</span>
+<span class="text-text-light"><strong>Red</strong> - Overdue (needs service now!)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-2xl">🟡</span>
+<span class="text-text-light"><strong>Yellow</strong> - Due soon (within 7 days)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-2xl">🟢</span>
+<span class="text-text-light"><strong>Green</strong> - Upcoming (within 30 days)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-2xl">⚪</span>
+<span class="text-text-light"><strong>Gray</strong> - Not due yet (more than 30 days away)</span>
+</div>
+</div>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Quick Actions:</h3>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Tap an item to open details</li>
+<li>Tap "Log Service" to mark complete</li>
+<li>Tap "Export" to sync to calendar</li>
+</ul>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Customizing Dashboard Display</h3>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Go to <strong>Settings</strong> → <strong>Dashboard</strong></li>
+<li>Toggle <strong>"Show Upcoming Maintenance"</strong> on/off</li>
+<li>Drag to reorder where it appears</li>
+<li>Set how many days ahead to show (7, 14, 30 days)</li>
+</ol>
+</section>
+
+<!-- Maintenance Parts Tracking -->
+<section id="maintenance-parts" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Maintenance Parts Tracking</h2>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">For equipment that needs replacement parts:</p>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Adding Parts to Equipment</h3>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Open an equipment item</li>
+<li>Go to <strong>"Maintenance Parts"</strong> section</li>
+<li>Tap <strong>"Add Part"</strong></li>
+<li>Fill in details:
+   <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+   <li><strong>Part Name</strong> (e.g., "Chainsaw Chain", "Mower Blade")</li>
+   <li><strong>Part Number</strong> (manufacturer number for reordering)</li>
+   <li><strong>Quantity on Hand</strong></li>
+   <li><strong>Reorder Threshold</strong> (get alerted when low)</li>
+   <li><strong>Estimated Lifespan</strong> (hours until replacement)</li>
+   <li><strong>Purchase Link</strong> (where to buy)</li>
+   </ul>
+</li>
+<li>Tap <strong>"Save"</strong></li>
+</ol>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Logging Part Replacements</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">When you replace a part during maintenance:</p>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>Log the service record (see above)</li>
+<li>In the service notes, mention the part replaced</li>
+<li>Update the part's quantity (if you track spares)</li>
+<li>The app tracks replacement history</li>
+</ol>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Low Parts Alerts</h3>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Dashboard shows parts running low</li>
+<li>Get notified when parts need reordering</li>
+<li>Add directly to shopping list</li>
+</ul>
+</section>
+
+<!-- Best Practices -->
+<section id="best-practices" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Best Practices</h2>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Creating Effective Maintenance Schedules</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-3">✅ <strong>DO:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Set realistic intervals based on manufacturer recommendations</li>
+<li>Include all regular maintenance tasks (oil, filters, blades, belts)</li>
+<li>Log maintenance immediately after completing</li>
+<li>Add photos to document condition</li>
+<li>Track actual costs for budgeting</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-3">❌ <strong>DON'T:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Set intervals too short (creates alert fatigue)</li>
+<li>Skip logging completed maintenance (breaks the cycle)</li>
+<li>Forget to export to calendar (you'll miss reminders)</li>
+<li>Ignore overdue maintenance (can damage equipment)</li>
+</ul>
+</div>
+</div>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Calendar Export Tips</h3>
+<div class="space-y-4 mb-6">
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2">💡 <strong>Choose the Right Calendar:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Use a dedicated "Maintenance" calendar if you have many items</li>
+<li>Share with family members who also maintain equipment</li>
+<li>Use color coding in your calendar app (e.g., red for equipment maintenance)</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2">💡 <strong>Set Helpful Reminders:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>1 week before: Order parts if needed</li>
+<li>1 day before: Gather tools and supplies</li>
+<li>Day of: Do the maintenance!</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2">💡 <strong>Sync Regularly:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Export updates after logging service</li>
+<li>Re-export if you change schedules</li>
+<li>Check calendar weekly for upcoming tasks</li>
+</ul>
+</div>
+</div>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Equipment to Track</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>High Priority (definitely track):</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4 text-sm">
+<li>Lawn mowers</li>
+<li>Snow blowers</li>
+<li>Generators</li>
+<li>Chainsaws</li>
+<li>Pressure washers</li>
+<li>Vehicles/ATVs in your garage</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Medium Priority (consider tracking):</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4 text-sm">
+<li>Power tools with regular maintenance (table saws, routers)</li>
+<li>HVAC equipment in workshop</li>
+<li>Compressors</li>
+<li>Welders</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Low Priority (optional):</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4 text-sm">
+<li>Hand tools (rarely need maintenance)</li>
+<li>Small occasional-use equipment</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Advanced Features -->
+<section id="advanced-features" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Advanced Features</h2>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Tracking by Hours/Mileage</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">For equipment with hour meters or vehicles:</p>
+<ol class="list-decimal list-inside text-text-dark text-base sm:text-lg space-y-3 mb-6 ml-4">
+<li>In maintenance schedule, choose <strong>"Hours"</strong> or <strong>"Mileage"</strong> interval</li>
+<li>Set interval (e.g., every 50 hours, every 3,000 miles)</li>
+<li>Log current hours/mileage when completing service</li>
+<li>App calculates next service based on usage</li>
+</ol>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-2"><strong>Example:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Generator: Change oil every 50 hours</li>
+<li>Current hours: 175</li>
+<li>Last oil change: 150 hours</li>
+<li>Next due: 200 hours (25 hours of runtime remaining)</li>
+</ul>
+</div>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Multiple Maintenance Schedules per Item</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">You can create multiple schedules for one piece of equipment:</p>
+
+<div class="rounded-lg bg-primary-dark/40 p-4 mb-6">
+<p class="text-text-light font-semibold mb-2"><strong>Lawn Mower Example:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Oil Change - every 180 days</li>
+<li>Blade Sharpening - every 90 days</li>
+<li>Air Filter - every 365 days</li>
+<li>Spark Plug - every 730 days</li>
+</ul>
+</div>
+
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">Each schedule exports separately to your calendar!</p>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Service Provider Tracking</h3>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4">Track who does your maintenance:</p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-4 ml-4">
+<li><strong>Yourself</strong> - DIY maintenance</li>
+<li><strong>Shop Name</strong> - "Mike's Small Engine Repair"</li>
+<li><strong>Dealer</strong> - Equipment dealer service department</li>
+<li><strong>Mobile Service</strong> - Traveling mechanics</li>
+</ul>
+
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-4"><strong>Benefits:</strong></p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>See service history by provider</li>
+<li>Track warranty work</li>
+<li>Compare costs between DIY and professional service</li>
+</ul>
+</section>
+
+<!-- Troubleshooting -->
+<section id="troubleshooting" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Troubleshooting</h2>
+<div class="space-y-6">
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Problem: Calendar export not working</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Check calendar permissions in phone settings</li>
+<li>Make sure you have a calendar app installed</li>
+<li>Try exporting single item first before bulk export</li>
+<li>Restart the app and try again</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Problem: Next service date is wrong</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Check the "Last Completed" date in maintenance schedule</li>
+<li>Verify the interval setting (90, 180, 365 days)</li>
+<li>Log a new service record with correct date</li>
+<li>The next due date will recalculate automatically</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Problem: Not getting calendar reminders</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Check notification settings in your calendar app</li>
+<li>Make sure reminders are enabled for the maintenance calendar</li>
+<li>Verify the advance notice setting (7 days, 1 day)</li>
+<li>Re-export the schedule to refresh</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Problem: Dashboard not showing upcoming maintenance</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Go to Settings → Dashboard → Toggle "Upcoming Maintenance" ON</li>
+<li>Check that you have maintenance schedules created</li>
+<li>Make sure maintenance is due within your display window (30 days)</li>
+<li>Pull down to refresh the dashboard</li>
+</ul>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-2"><strong>Problem: Overdue maintenance not showing</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Check that the maintenance schedule is still active</li>
+<li>Verify the last completed date is in the past</li>
+<li>Refresh the dashboard</li>
+<li>Log the service if it was already completed</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Quick Reference -->
+<section id="quick-reference" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Quick Reference</h2>
+
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-4">Maintenance Workflow Cheat Sheet</h3>
+
+<div class="space-y-4 mb-6">
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-3"><strong>Setting Up:</strong></p>
+<ol class="list-decimal list-inside text-text-dark space-y-1 ml-4">
+<li>Add equipment to inventory</li>
+<li>Create maintenance schedule with interval</li>
+<li>Set last completed date</li>
+<li>Export to calendar</li>
+</ol>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-3"><strong>When Service is Due:</strong></p>
+<ol class="list-decimal list-inside text-text-dark space-y-1 ml-4">
+<li>Get calendar reminder</li>
+<li>Perform or schedule maintenance</li>
+<li>Log service record with details</li>
+<li>Add photos and costs</li>
+<li>Next date auto-calculated</li>
+</ol>
+</div>
+<div class="rounded-lg bg-primary-dark/40 p-4">
+<p class="text-text-light font-semibold mb-3"><strong>Regular Reviews:</strong></p>
+<ul class="list-disc list-inside text-text-dark space-y-1 ml-4">
+<li>Check dashboard weekly for upcoming maintenance</li>
+<li>Review calendar monthly for next month's tasks</li>
+<li>Update schedules if manufacturer recommendations change</li>
+<li>Export updates after major changes</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Need Help -->
+<section id="need-help" class="mb-16 scroll-mt-8">
+<h2 class="text-2xl sm:text-3xl font-display font-bold text-text-light mb-6">Need Help?</h2>
+<p class="text-text-dark text-base sm:text-lg leading-relaxed mb-6">If you need assistance:</p>
+<ul class="list-disc list-inside text-text-dark text-base sm:text-lg space-y-2 mb-6 ml-4">
+<li>Contact <a href="mailto:support@garagevault.app" class="text-accent-light hover:text-accent underline">support@garagevault.app</a></li>
+<li>Visit our <a href="index.html" class="text-accent-light hover:text-accent underline">Help Center</a></li>
+<li>Watch our Maintenance Tracking Tutorial Video</li>
+<li>Check out the Equipment Management Guide</li>
+</ul>
+<p class="text-text-light text-lg sm:text-xl font-semibold">Keep your equipment running smoothly! 🔧⚙️</p>
+</section>
+</div>
+
+<!-- Back to Support Link (Bottom) -->
+<div class="mt-12 pt-8 border-t border-primary/30">
+<a href="index.html" class="inline-flex items-center gap-2 text-accent-light hover:text-accent transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Back to Support</span>
+</a>
+</div>
+</div>
+</main>
+<footer class="bg-primary-dark/80 border-t border-primary/30">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-10">
+<div class="flex items-center gap-2 sm:gap-3">
+<img src="../../ICON_Transparent 2 Background Removed.png" alt="GarageVault - AI-powered garage organization app logo with padlock and wrench icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
+<div>
+<h2 class="text-xl sm:text-2xl font-display font-bold text-text-light">GarageVault</h2>
+<p class="text-xs sm:text-sm text-text-dark">Inventory Unlocked</p>
+</div>
+</div>
+<nav class="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-3 sm:gap-y-4 text-base sm:text-lg">
+<a class="text-text-dark hover:text-accent-light transition-colors" href="../../index.html#features">Features</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="../../index.html#pricing">Pricing</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="../../terms.html">Terms of Service</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="../../privacy.html">Privacy Policy</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="index.html">Support</a>
+</nav>
+<p class="text-sm sm:text-base text-text-dark text-center md:text-left">© 2024 GarageVault. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+<script>
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
+const closeIcon = mobileMenuBtn.querySelector('.close-icon');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+// Close mobile menu when clicking on a link
+const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
+});
+
+// Close mobile menu on window resize if open
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024 && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    }
+});
+
+// Track App Store link clicks
+document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
+    link.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'app_store_click', {
+                'event_category': 'engagement',
+                'event_label': 'download_app',
+                'value': 1
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>

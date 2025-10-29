@@ -21,6 +21,11 @@
       "source": "/store-management.html",
       "destination": "/support/store-management.html",
       "permanent": true
+    },
+    {
+      "source": "/maintenance-calendar-export.html",
+      "destination": "/support/maintenance-calendar-export.html",
+      "permanent": true
     }
   ],
   "rewrites": [
