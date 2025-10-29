@@ -1,6 +1,18 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/storage-categories.html",
+      "destination": "/support/storage-categories.html",
+      "permanent": true
+    },
+    {
+      "source": "/households.html",
+      "destination": "/support/households.html",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/support",
