@@ -88,6 +88,13 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<!-- Supabase Client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'https://glhwxyhhycqytfrsjzyz.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaHd4eWhoeWNxeXRmcnNqenl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1NjQ3MjIsImV4cCI6MjA2OTE0MDcyMn0.4SAwtIdGUgcFGvInISOa4pNUw-RuihSqvnYxDxc-wo0';
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
 <style type="text/tailwindcss">
         /* Mobile menu animation */
         .mobile-menu {
@@ -121,9 +128,9 @@
 <a class="text-base lg:text-lg font-medium text-accent-light transition-colors" href="index.html">Support</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Download App</span>
-</a>
+<button id="header-notify-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get Notified</span>
+</button>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -139,9 +146,9 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../index.html#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../index.html#testimonials">Reviews</a>
 <a class="text-lg font-medium text-accent-light transition-colors" href="index.html">Support</a>
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Download App</span>
-</a>
+<button id="mobile-notify-btn" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get Notified</span>
+</button>
 </nav>
 </div>
 </div>
@@ -239,9 +246,9 @@
 <span class="material-symbols-outlined text-accent-light text-2xl">mail</span>
 <span class="text-text-light font-medium">Contact Support</span>
 </a>
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 rounded-lg bg-primary/20 hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-accent-light text-2xl">star</span>
-<span class="text-text-light font-medium">App Store Reviews</span>
+<a href="mailto:support@garagevault.app" class="flex items-center gap-3 p-4 rounded-lg bg-primary/20 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-accent-light text-2xl">notifications</span>
+<span class="text-text-light font-medium">Get Notified</span>
 </a>
 </div>
 </div>
@@ -313,17 +320,53 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Track App Store link clicks
-document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
-    link.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'app_store_click', {
-                'event_category': 'engagement',
-                'event_label': 'download_app',
-                'value': 1
-            });
+// Email signup handler
+async function handleSignup(email, source) {
+    try {
+        const { data, error } = await supabase
+            .from('signups')
+            .insert([{
+                email: email,
+                source: source,
+                user_agent: navigator.userAgent
+            }]);
+
+        if (error) {
+            if (error.code === '23505') {
+                alert('You\'re already signed up! We\'ll notify you when GarageVault is available.');
+            } else {
+                throw error;
+            }
+        } else {
+            alert('Thanks! We\'ll notify you when GarageVault is available.');
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'email_signup', {
+                    'event_category': 'engagement',
+                    'event_label': source,
+                    'value': 1
+                });
+            }
         }
-    });
+    } catch (error) {
+        console.error('Error signing up:', error);
+        alert('Oops! Something went wrong. Please try again.');
+    }
+}
+
+// Header notify button
+document.getElementById('header-notify-btn').addEventListener('click', () => {
+    const email = prompt('Enter your email to get notified when GarageVault is available:');
+    if (email && email.includes('@')) {
+        handleSignup(email, 'support-header-button');
+    }
+});
+
+// Mobile notify button
+document.getElementById('mobile-notify-btn').addEventListener('click', () => {
+    const email = prompt('Enter your email to get notified when GarageVault is available:');
+    if (email && email.includes('@')) {
+        handleSignup(email, 'support-mobile-button');
+    }
 });
 </script>
 </body>

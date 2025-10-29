@@ -87,6 +87,13 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<!-- Supabase Client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'https://glhwxyhhycqytfrsjzyz.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdsaHd4eWhoeWNxeXRmcnNqenl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1NjQ3MjIsImV4cCI6MjA2OTE0MDcyMn0.4SAwtIdGUgcFGvInISOa4pNUw-RuihSqvnYxDxc-wo0';
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
 <style type="text/tailwindcss">
         .ken-burns {
             animation: kenburns 20s ease-out both infinite;
@@ -183,7 +190,6 @@
       "name": "GarageVault",
       "description": "AI-powered garage organization app that tracks your tools, equipment, and inventory. Get reminded what to buy when you're near hardware stores.",
       "url": "https://garagevault.app",
-      "downloadUrl": "https://apps.apple.com/us/app/garagevault/id6753317037",
       "softwareVersion": "1.0",
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "iOS 15.1 or later",
@@ -302,11 +308,12 @@
 <a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#features">Features</a>
 <a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
+<a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="support/">Support</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Download App</span>
-</a>
+<button id="header-notify-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get Notified</span>
+</button>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -321,9 +328,10 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#features">Features</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Download App</span>
-</a>
+<a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="support/">Support</a>
+<button id="mobile-notify-btn" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get Notified</span>
+</button>
 </nav>
 </div>
 </div>
@@ -336,11 +344,12 @@
 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold tracking-tight leading-tight">Never Buy Duplicates Again</h1>
 <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-accent-light leading-relaxed">Take control of your garage. AI-powered inventory that reminds you what to buy at the perfect moment.</p>
 <div class="mt-2 sm:mt-4 lg:mt-6">
-<div class="flex flex-col items-center gap-4">
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="inline-block transform transition-transform hover:scale-105">
-<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1640995200" alt="Download on the App Store" style="height: 60px; width: auto;">
-</a>
-<p class="text-sm sm:text-base text-accent-light text-center">Available now on iOS 15.1+ • Free to start</p>
+<div class="flex flex-col items-center gap-4 max-w-md mx-auto">
+<form id="hero-form" class="w-full flex flex-col sm:flex-row gap-3">
+<input type="email" id="hero-email" placeholder="Enter your email" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-text-light placeholder:text-text-dark focus:outline-none focus:border-accent-light focus:ring-2 focus:ring-accent-light/50">
+<button type="submit" class="px-6 py-3 rounded-lg bg-accent text-white font-bold hover:bg-accent-light transition-colors shadow-lg whitespace-nowrap">Get Notified</button>
+</form>
+<p class="text-sm sm:text-base text-accent-light text-center">We'll notify you when GarageVault is available</p>
 </div>
 </div>
 </div>
@@ -806,9 +815,10 @@ Start Free Trial
 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-text-light">Ready to Transform Your Garage?</h2>
 <p class="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-accent-light max-w-3xl mx-auto">Join thousands of DIY enthusiasts and never buy duplicate tools again.</p>
 <div class="mt-6 sm:mt-8 lg:mt-10 flex justify-center">
-<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="inline-block transform transition-transform hover:scale-105">
-<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1640995200" alt="Download on the App Store" style="height: 70px; width: auto;">
-</a>
+<form id="bottom-form" class="w-full max-w-md flex flex-col sm:flex-row gap-3">
+<input type="email" id="bottom-email" placeholder="Enter your email" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-text-light placeholder:text-text-dark focus:outline-none focus:border-accent-light focus:ring-2 focus:ring-accent-light/50">
+<button type="submit" class="px-6 py-3 rounded-lg bg-accent text-white font-bold hover:bg-accent-light transition-colors shadow-lg whitespace-nowrap">Get Notified</button>
+</form>
 </div>
 </section>
 </div>
@@ -828,6 +838,7 @@ Start Free Trial
 <a class="text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-text-dark hover:text-accent-light transition-colors" href="terms.html">Terms of Service</a>
 <a class="text-text-dark hover:text-accent-light transition-colors" href="privacy.html">Privacy Policy</a>
+<a class="text-text-dark hover:text-accent-light transition-colors" href="support/">Support</a>
 </nav>
 <p class="text-sm sm:text-base text-text-dark text-center md:text-left">© 2024 GarageVault. All rights reserved.</p>
 </div>
@@ -867,20 +878,89 @@ window.addEventListener('resize', () => {
     }
 });
 
-// App is now live on App Store!
-// All download links point to: https://apps.apple.com/us/app/garagevault/id6753317037
+// Email signup form handler
+async function handleSignup(email, source) {
+    try {
+        const { data, error } = await supabase
+            .from('signups')
+            .insert([{
+                email: email,
+                source: source,
+                user_agent: navigator.userAgent
+            }]);
 
-// Track App Store link clicks
-document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
-    link.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'app_store_click', {
-                'event_category': 'engagement',
-                'event_label': 'download_app',
-                'value': 1
-            });
+        if (error) {
+            if (error.code === '23505') { // Duplicate email
+                showSuccessModal('You\'re already signed up! We\'ll notify you when GarageVault is available.');
+            } else {
+                throw error;
+            }
+        } else {
+            showSuccessModal('Thanks! We\'ll notify you when GarageVault is available.');
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'email_signup', {
+                    'event_category': 'engagement',
+                    'event_label': source,
+                    'value': 1
+                });
+            }
         }
-    });
+    } catch (error) {
+        console.error('Error signing up:', error);
+        showSuccessModal('Oops! Something went wrong. Please try again.');
+    }
+}
+
+// Show success modal
+function showSuccessModal(message) {
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.innerHTML = `
+        <div class="modal-content">
+            <div class="success-icon">
+                <span class="success-checkmark">✓</span>
+            </div>
+            <h2 class="text-2xl font-display font-bold text-white mb-4">Success!</h2>
+            <p class="text-text-light text-lg mb-6">${message}</p>
+            <button onclick="this.closest('.modal-overlay').remove()" class="px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent-light transition-colors">
+                Close
+            </button>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(() => overlay.remove(), 5000);
+}
+
+// Hero form
+document.getElementById('hero-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('hero-email').value;
+    await handleSignup(email, 'hero-form');
+    e.target.reset();
+});
+
+// Bottom form
+document.getElementById('bottom-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('bottom-email').value;
+    await handleSignup(email, 'bottom-form');
+    e.target.reset();
+});
+
+// Header notify button (opens email input modal)
+document.getElementById('header-notify-btn').addEventListener('click', () => {
+    const email = prompt('Enter your email to get notified when GarageVault is available:');
+    if (email && email.includes('@')) {
+        handleSignup(email, 'header-button');
+    }
+});
+
+// Mobile notify button
+document.getElementById('mobile-notify-btn').addEventListener('click', () => {
+    const email = prompt('Enter your email to get notified when GarageVault is available:');
+    if (email && email.includes('@')) {
+        handleSignup(email, 'mobile-button');
+    }
 });
 </script>
 </body></html>
