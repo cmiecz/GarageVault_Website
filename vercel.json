@@ -16,6 +16,11 @@
       "source": "/store-reminders.html",
       "destination": "/support/store-reminders.html",
       "permanent": true
+    },
+    {
+      "source": "/store-management.html",
+      "destination": "/support/store-management.html",
+      "permanent": true
     }
   ],
   "rewrites": [
