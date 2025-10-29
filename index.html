@@ -24,7 +24,6 @@
 <meta name="theme-color" content="#4a7c9e"/>
 <meta name="language" content="en"/>
 <meta name="locale" content="en_US"/>
-<meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://garagevault.app/"/>
 
 <title>GarageVault - Inventory Unlocked | Stop Buying Duplicate Tools</title>
@@ -50,9 +49,6 @@
 <meta property="twitter:image" content="https://garagevault.app/hero.jpg"/>
 
 <link href="ICON_Transparent 2 Background Removed.png" rel="icon" type="image/png"/>
-<link rel="preload" href="hero.jpg" as="image" type="image/jpeg" fetchpriority="high"/>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
-<link rel="dns-prefetch" href="https://cdn.tailwindcss.com"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
     tailwind.config = {
@@ -187,14 +183,17 @@
       "name": "GarageVault",
       "description": "AI-powered garage organization app that tracks your tools, equipment, and inventory. Get reminded what to buy when you're near hardware stores.",
       "url": "https://garagevault.app",
+      "downloadUrl": "https://apps.apple.com/us/app/garagevault/id6753317037",
+      "softwareVersion": "1.0",
       "applicationCategory": "ProductivityApplication",
-      "operatingSystem": "iOS",
+      "operatingSystem": "iOS 15.1 or later",
       "offers": [
         {
           "@type": "Offer",
           "name": "Free Plan",
           "price": "0",
           "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
           "description": "Up to 10 items with full AI identification"
         },
         {
@@ -202,6 +201,7 @@
           "name": "Premium Monthly",
           "price": "4.99",
           "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
           "billingIncrement": "Monthly",
           "description": "Unlimited items, QR codes, store reminders, family sharing"
         },
@@ -210,6 +210,7 @@
           "name": "Premium Annual",
           "price": "39.99",
           "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
           "billingIncrement": "Yearly",
           "description": "Save 33% - All premium features"
         }
@@ -268,20 +269,6 @@
       ]
     }
     </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GarageVault",
-      "url": "https://garagevault.app",
-      "logo": "https://garagevault.app/ICON_Transparent 2 Background Removed.png",
-      "description": "AI-powered garage organization and inventory management app for homeowners and professionals",
-      "email": "support@garagevault.app",
-      "foundingDate": "2024",
-      "sameAs": []
-    }
-    </script>
 </head>
 <body class="bg-background-dark text-text-light font-body">
 <!-- Breadcrumb Schema -->
@@ -305,7 +292,7 @@
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex h-16 sm:h-20 items-center justify-between border-b border-primary/30">
 <div class="flex items-center gap-2 sm:gap-3">
-<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault logo - AI garage organization app with tool tracking" width="40" height="40" fetchpriority="high" class="h-8 w-8 sm:h-10 sm:w-10"/>
+<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault - AI-powered garage organization app logo with padlock and wrench icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
 <div>
 <h2 class="text-lg sm:text-xl md:text-2xl font-display font-bold text-text-light">GarageVault</h2>
 <p class="text-xs text-text-dark hidden sm:block">Inventory Unlocked</p>
@@ -317,9 +304,9 @@
 <a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-<button id="header-beta-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Notified</span>
-</button>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Download App</span>
+</a>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -334,9 +321,9 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#features">Features</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
-<button id="mobile-beta-btn" class="mt-2 h-12 w-full rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Notified</span>
-</button>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Download App</span>
+</a>
 </nav>
 </div>
 </div>
@@ -349,16 +336,11 @@
 <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold tracking-tight leading-tight">Never Buy Duplicates Again</h1>
 <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-accent-light leading-relaxed">Take control of your garage. AI-powered inventory that reminds you what to buy at the perfect moment.</p>
 <div class="mt-2 sm:mt-4 lg:mt-6">
-<div class="max-w-md mx-auto">
-<form id="beta-signup-form" class="flex flex-col sm:flex-row gap-3">
-<input type="email" id="beta-email" placeholder="Enter your email to get notified" aria-label="Email address for launch notifications" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
-<!-- Honeypot field for spam prevention (hidden from users) -->
-<input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;" aria-hidden="true">
-<button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-6 sm:px-8 text-base sm:text-lg font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
-<span class="truncate">Get Notified</span>
-</button>
-</form>
-<p class="text-sm text-accent-light mt-2 text-center sm:text-left">Be the first to know when GarageVault launches!</p>
+<div class="flex flex-col items-center gap-4">
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="inline-block transform transition-transform hover:scale-105">
+<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1640995200" alt="Download on the App Store" style="height: 60px; width: auto;">
+</a>
+<p class="text-sm sm:text-base text-accent-light text-center">Available now on iOS 15.1+ • Free to start</p>
 </div>
 </div>
 </div>
@@ -823,18 +805,10 @@ Start Free Trial
 <section class="text-center bg-primary-dark rounded-xl sm:rounded-2xl py-10 sm:py-16 lg:py-20 px-6 sm:px-10 lg:px-12 shadow-xl">
 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-text-light">Ready to Transform Your Garage?</h2>
 <p class="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-accent-light max-w-3xl mx-auto">Join thousands of DIY enthusiasts and never buy duplicate tools again.</p>
-<div class="mt-6 sm:mt-8 lg:mt-10">
-<div class="max-w-md mx-auto">
-<form id="bottom-beta-signup-form" class="flex flex-col sm:flex-row gap-3">
-<input type="email" id="bottom-beta-email" placeholder="Enter your email to get notified" aria-label="Email address for launch notifications" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent">
-<!-- Honeypot field for spam prevention (hidden from users) -->
-<input type="text" name="website_bottom" id="website_bottom" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;" aria-hidden="true">
-<button type="submit" class="h-12 sm:h-14 rounded-lg bg-accent px-8 sm:px-10 text-base sm:text-lg lg:text-xl font-bold text-white shadow-xl transition-colors hover:bg-accent-light whitespace-nowrap">
-<span class="truncate">Get Notified</span>
-</button>
-</form>
-<p class="text-sm text-accent-light mt-2 text-center">Get notified when we launch!</p>
-</div>
+<div class="mt-6 sm:mt-8 lg:mt-10 flex justify-center">
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="inline-block transform transition-transform hover:scale-105">
+<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1640995200" alt="Download on the App Store" style="height: 70px; width: auto;">
+</a>
 </div>
 </section>
 </div>
@@ -843,7 +817,7 @@ Start Free Trial
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
 <div class="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 lg:gap-10">
 <div class="flex items-center gap-2 sm:gap-3">
-<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault logo - AI garage organization app with tool tracking" width="40" height="40" loading="lazy" class="h-8 w-8 sm:h-10 sm:w-10"/>
+<img src="ICON_Transparent 2 Background Removed.png" alt="GarageVault - AI-powered garage organization app logo with padlock and wrench icon" class="h-8 w-8 sm:h-10 sm:w-10"/>
 <div>
 <h2 class="text-xl sm:text-2xl font-display font-bold text-text-light">GarageVault</h2>
 <p class="text-xs sm:text-sm text-text-dark">Inventory Unlocked</p>
@@ -893,243 +867,20 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Supabase configuration
-const SUPABASE_URL = 'https://zvrgncarhlvhxntbndkx.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2cmduY2FyaGx2aHhudGJuZGt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzMDk4MTIsImV4cCI6MjA3NDg4NTgxMn0.7rM9tkuELzH7g3oBsr4Y5mwywufGt5oWQGtI2navscM';
+// App is now live on App Store!
+// All download links point to: https://apps.apple.com/us/app/garagevault/id6753317037
 
-// Launch notification signup handling
-async function handleBetaSignup(email, formId) {
-    console.log('Starting signup process for:', email);
-    
-    try {
-        // Store in Supabase database
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/signups`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                'apikey': SUPABASE_ANON_KEY,
-                'Prefer': 'return=minimal'
-            },
-            body: JSON.stringify({
-                email: email,
-                source: formId,
-                user_agent: navigator.userAgent,
-                created_at: new Date().toISOString()
-            })
-        });
-
-        console.log('Supabase response status:', response.status);
-
-        if (response.ok || response.status === 201) {
-            // Success - show success message
-            console.log('Showing success message');
-            showSuccessMessage(formId);
-            
-            // Send immediate notification email to you
-            sendNotificationEmail(email, formId);
-            
-            // Track signup event in Google Analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'launch_notification_signup', {
-                    'event_category': 'engagement',
-                    'event_label': formId,
-                    'value': 1
-                });
-            }
-            
-            console.log('Launch notification signup successful:', { email, formId, timestamp: new Date().toISOString() });
-        } else {
-            // Handle errors but still show success to user
-            const errorData = await response.json().catch(() => ({}));
-            console.warn('Supabase error:', errorData);
-            
-            // Always show success message to user even if there's an error
-            showSuccessMessage(formId);
-            
-            // Send notification email as fallback
-            sendNotificationEmail(email, formId);
-        }
-    } catch (error) {
-        console.error('Signup error:', error);
-        
-        // Always show success message to user
-        showSuccessMessage(formId);
-        
-        // Send notification email as fallback
-        sendNotificationEmail(email, formId);
-    }
-}
-
-// Send immediate notification email to you
-function sendNotificationEmail(email, formId) {
-    const subject = encodeURIComponent('🚨 NEW SIGNUP - GarageVault Launch Notification');
-    const body = encodeURIComponent(`🎉 NEW SIGNUP RECEIVED!
-
-Email: ${email}
-Form: ${formId}
-Timestamp: ${new Date().toLocaleString()}
-User Agent: ${navigator.userAgent}
-IP: ${window.location.hostname}
-
-This person wants to be notified when GarageVault launches!
-
----
-Sent automatically from GarageVault website
-`);
-    
-    // Create a hidden iframe to send the email without redirecting
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = `mailto:support@garagevault.app?subject=${subject}&body=${body}`;
-    document.body.appendChild(iframe);
-    
-    // Remove iframe after a short delay
-    setTimeout(() => {
-        document.body.removeChild(iframe);
-    }, 1000);
-}
-
-function showSuccessMessage(formId, customMessage = null) {
-    console.log('showSuccessMessage called with formId:', formId);
-    
-    // Track thank_you event in Google Analytics
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'thank_you', {
-            'event_category': 'engagement',
-            'event_label': formId,
-            'value': 1
-        });
-        console.log('Thank you event tracked:', formId);
-    }
-    
-    // Create modal overlay
-    const modal = document.createElement('div');
-    modal.className = 'modal-overlay';
-    console.log('Modal element created');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <div class="success-icon">
-                <svg class="success-checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
-                Thank You!
-            </h2>
-            <p class="text-lg sm:text-xl text-accent-light mb-6">
-                ${customMessage || 'We\'ll notify you when GarageVault launches!'}
-            </p>
-            <p class="text-sm text-text-dark mb-6">
-                Keep an eye on your inbox for exciting updates about GarageVault.
-            </p>
-            <button onclick="this.closest('.modal-overlay').remove()" class="px-8 py-3 bg-accent hover:bg-accent-light text-white font-bold rounded-lg transition-all shadow-lg transform hover:scale-105">
-                Got It!
-            </button>
-        </div>
-    `;
-    
-    // Add modal to page
-    document.body.appendChild(modal);
-    
-    // Close modal when clicking overlay
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            modal.remove();
+// Track App Store link clicks
+document.querySelectorAll('a[href*="apps.apple.com"]').forEach(link => {
+    link.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'app_store_click', {
+                'event_category': 'engagement',
+                'event_label': 'download_app',
+                'value': 1
+            });
         }
     });
-    
-    // Auto-close after 5 seconds
-    setTimeout(() => {
-        if (modal.parentNode) {
-            modal.remove();
-        }
-    }, 5000);
-}
-
-// Handle main hero form
-document.getElementById('beta-signup-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const email = document.getElementById('beta-email').value.trim();
-    const honeypot = document.getElementById('website').value;
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const form = this;
-    
-    // Honeypot spam check - if filled, it's a bot
-    if (honeypot) {
-        console.log('Spam submission blocked by honeypot');
-        return false;
-    }
-    
-    if (email) {
-        // Show loading state
-        submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
-        submitBtn.disabled = true;
-        
-        try {
-            await handleBetaSignup(email, 'hero-form');
-            // Clear form after successful submission
-            form.reset();
-        } catch (error) {
-            console.error('Form submission error:', error);
-        } finally {
-            // Reset button state
-            submitBtn.innerHTML = '<span class="truncate">Get Notified</span>';
-            submitBtn.disabled = false;
-        }
-    }
-});
-
-// Handle bottom form
-document.getElementById('bottom-beta-signup-form').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const email = document.getElementById('bottom-beta-email').value.trim();
-    const honeypot = document.getElementById('website_bottom').value;
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const form = this;
-    
-    // Honeypot spam check - if filled, it's a bot
-    if (honeypot) {
-        console.log('Spam submission blocked by honeypot');
-        return false;
-    }
-    
-    if (email) {
-        // Show loading state
-        submitBtn.innerHTML = '<span class="truncate">Submitting...</span>';
-        submitBtn.disabled = true;
-        
-        try {
-            await handleBetaSignup(email, 'bottom-form');
-            // Clear form after successful submission
-            form.reset();
-        } catch (error) {
-            console.error('Form submission error:', error);
-        } finally {
-            // Reset button state
-            submitBtn.innerHTML = '<span class="truncate">Get Notified</span>';
-            submitBtn.disabled = false;
-        }
-    }
-});
-
-// Handle header and mobile beta buttons (scroll to hero form)
-document.getElementById('header-beta-btn').addEventListener('click', function() {
-    document.getElementById('beta-email').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    document.getElementById('beta-email').focus();
-});
-
-document.getElementById('mobile-beta-btn').addEventListener('click', function() {
-    // Close mobile menu first
-    mobileMenu.classList.remove('open');
-    menuIcon.classList.remove('hidden');
-    closeIcon.classList.add('hidden');
-    
-    // Then scroll to form
-    setTimeout(() => {
-        document.getElementById('beta-email').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        document.getElementById('beta-email').focus();
-    }, 300);
 });
 </script>
 </body></html>
