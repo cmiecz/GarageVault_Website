@@ -11,6 +11,11 @@
       "source": "/households.html",
       "destination": "/support/households.html",
       "permanent": true
+    },
+    {
+      "source": "/store-reminders.html",
+      "destination": "/support/store-reminders.html",
+      "permanent": true
     }
   ],
   "rewrites": [
