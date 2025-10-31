@@ -56,7 +56,7 @@ When someone signs up, you'll get an email at **support@garagevault.app** with:
 
 2. **Check Resend API key is valid:**
    - Go to https://resend.com/api-keys
-   - Make sure `re_8MrgvSAw_JbhLX3CzjtP5ZZ63DnUSFjMH` is active
+   - Make sure your API key is active
 
 3. **Check trigger is active:**
    ```sql
@@ -80,7 +80,7 @@ When someone signs up, you'll get an email at **support@garagevault.app** with:
 
 ## 🎯 Current Configuration
 
-- **API Key:** `re_8MrgvSAw_JbhLX3CzjtP5ZZ63DnUSFjMH`
+- **API Key:** (stored securely in Supabase, not in code)
 - **From Email:** `GarageVault Signups <onboarding@resend.dev>`
 - **To Email:** `support@garagevault.app`
 - **Trigger:** Automatically fires on every new signup

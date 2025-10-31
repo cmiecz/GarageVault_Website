@@ -1,1 +1,6 @@
 .vercel
+resend.txt
+*.key
+*.secret
+.env.local
+.env
