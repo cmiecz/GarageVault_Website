@@ -36,19 +36,22 @@ Log service history
 
 FREE TO START
 
-Track up to 10 items free
+Track up to 10 items (1 photo + 1 receipt each)
 Full AI identification
-Photo uploads and location tracking
-Test all core features
+Store reminders (70+ hardware stores)
+Export maintenance to calendar
+View storage locations
+Categories & custom retailers
+Shopping list & low stock alerts
+Equipment parts tracking
 
 PREMIUM UNLOCKS EVERYTHING
 
-Unlimited inventory items
+Unlimited items & photos
 Full household sharing
-QR code label generation
-Maintenance scheduling
-Store location reminders
-Multiple photos per item
+Create & edit storage locations & QR codes
+Full maintenance tracking (service records, parts)
+Cross-household sharing
 Advanced analytics
 
 PERFECT FOR:

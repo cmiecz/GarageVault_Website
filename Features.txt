@@ -53,6 +53,29 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 - ✅ **One-tap restock** - "Purchased" button auto-updates quantity
 - ✅ **Share shopping list** - Export as text to Messages, Notes, etc.
 
+### **Location-Based Store Reminders**
+- ✅ **Store reminder notifications** - Get alerts when near 70+ hardware stores
+- ✅ **70+ pre-loaded locations** - Home Depot, Lowe's, Ace, Menards, Harbor Freight, etc.
+- ✅ **150-meter geofencing** - Precise detection when near stores
+- ✅ **Smart notifications** - Only alerts when you have low stock items
+- ✅ **2-hour cooldown** - Prevents spam notifications
+- ✅ **Battery efficient** - Updates every 100m or 5 minutes
+- ✅ **Store selection** - Choose which chains to monitor
+
+### **Maintenance Calendar Export**
+- ✅ **Export to calendar** - Sync maintenance schedules to device calendar
+- ✅ **ICS file format** - Compatible with Google Calendar, Apple Calendar, Outlook
+- ✅ **Recurring events** - Automatic calendar entries for scheduled maintenance
+
+### **Storage Location Viewing**
+- ✅ **View existing locations** - See storage locations if you had premium before
+- ✅ **View items by location** - Filter inventory by storage location
+- ❌ **Cannot create/edit** - Creating and editing locations requires Premium
+
+### **Categories & Custom Retailers**
+- ✅ **Custom categories** - Create and manage your own categories
+- ✅ **Custom retailers** - Add your own store names and links
+
 ### **Additional Features**
 - ✅ **Clone items** - Duplicate with all details
 - ✅ **Edit & delete** - Full item management
@@ -81,8 +104,8 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 - ✅ **Share control** - Mark items private when needed
 - ✅ **Supabase backend** - Secure, reliable cloud storage
 
-### **Storage Locations & QR Codes**
-- ✅ **Create storage locations** - Unlimited locations (Packout, bins, drawers, shelves, cabinets, toolboxes)
+### **Storage Locations & QR Codes (Create & Edit)**
+- ✅ **Create & edit storage locations** - Unlimited locations (Packout, bins, drawers, shelves, cabinets, toolboxes)
 - ✅ **QR code generation** - Unique QR code for each location
 - ✅ **QR code display** - View, print, share, or save QR codes
 - ✅ **Scan to view contents** - Instantly see what's in a container
@@ -91,8 +114,9 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 - ✅ **Color coding** - Optional color labels for locations
 - ✅ **Multi-room tracking** - Organize across property
 - ✅ **Quick location picker** - Easy assignment when adding items
+- ℹ️ **Note:** Free users can view existing storage locations, but creating and editing requires Premium
 
-### **Advanced Maintenance Tracking**
+### **Advanced Maintenance Tracking** (Full Service Records)
 - ✅ **Service history logging** - Complete maintenance records
 - ✅ **Cost tracking** - Service cost, parts cost, labor cost breakdown
 - ✅ **Service provider tracking** - Record who did the service
@@ -102,10 +126,10 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 - ✅ **Next service scheduling** - Set future maintenance dates
 - ✅ **Edit/delete records** - Full record management
 - ✅ **Summary statistics** - Total services, total spent, average cost
-- ✅ **Calendar export (ICS)** - Export to device calendar
 - ✅ **Recurring reminders** - Based on maintenance intervals
 - ✅ **Parts replacement logs** - Track when parts were changed
 - ✅ **Overdue alerts** - Never miss maintenance
+- ℹ️ **Note:** Calendar export is free for everyone. Full maintenance tracking requires Premium.
 
 ### **Equipment Maintenance Schedules**
 - ✅ **Automatic maintenance tab** - All Equipment items get maintenance tracking
@@ -119,25 +143,6 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 - ✅ **Edit/delete tasks** - Full task management
 - ✅ **Database persistence** - All tasks saved and synced
 
-### **Location-Based Store Reminders** (Geofencing)
-- ✅ **70+ pre-loaded store locations** - Major cities across US
-- ✅ **Supported chains**:
-  - Home Depot (15 locations)
-  - Lowe's (9 locations)
-  - Ace Hardware (4 locations)
-  - Menards (4 locations)
-  - Harbor Freight (3 locations)
-  - True Value (2 locations)
-  - Tractor Supply (3 locations)
-- ✅ **150-meter geofencing** - Precise detection (~500 feet radius)
-- ✅ **Two-tiered detection** - Geofence database + reverse geocoding fallback
-- ✅ **Smart notifications** - Only when you have low stock items
-- ✅ **Notification content** - Shows item count and names
-- ✅ **2-hour cooldown** - No spam, one alert per 2 hours
-- ✅ **Battery efficient** - Updates every 100m or 5 minutes
-- ✅ **Background monitoring** - Works when app is closed (iOS)
-- ✅ **Store selection** - Choose which chains to monitor
-- ✅ **Enable/disable toggle** - Full control in Settings
 
 ### **Cross-Household Sharing**
 - ✅ **Connect with other households** - Friends, family, neighbors
@@ -277,7 +282,7 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 
 | Feature | Free | Premium |
 |---------|------|---------|
-| **Items in inventory** | 10 max | Unlimited ∞ |
+| **Items in inventory** | 10 max (1 photo + 1 receipt each) | Unlimited ∞ |
 | **Photos per item** | 1 | Unlimited ∞ |
 | **Receipt photos** | 1 | Unlimited ∞ |
 | **AI scanning** | ✅ | ✅ |
@@ -285,14 +290,18 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 | **Shopping list** | ✅ | ✅ |
 | **Low stock alerts** | ✅ | ✅ |
 | **Equipment parts tracking** | ✅ | ✅ |
+| **Store reminders (geofencing)** | ✅ | ✅ |
+| **Export maintenance to calendar** | ✅ | ✅ |
+| **View storage locations** | ✅ (view only) | ✅ |
+| **Create/edit storage locations** | ❌ | ✅ |
+| **QR codes** | ❌ | ✅ |
 | **Search & filter** | ✅ | ✅ |
 | **Custom categories** | ✅ | ✅ |
+| **Custom retailers** | ✅ | ✅ |
 | **Purchase links** | ✅ | ✅ |
 | **Clone items** | ✅ | ✅ |
 | **Household sharing** | ❌ | ✅ |
-| **Storage locations & QR codes** | ❌ | ✅ |
-| **Maintenance tracking** | ❌ | ✅ |
-| **Store reminders (geofencing)** | ❌ | ✅ |
+| **Full maintenance tracking** | ❌ | ✅ |
 | **Cross-household sharing** | ❌ | ✅ |
 | **Advanced analytics** | ❌ | ✅ |
 
