@@ -67,11 +67,6 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 - ✅ **ICS file format** - Compatible with Google Calendar, Apple Calendar, Outlook
 - ✅ **Recurring events** - Automatic calendar entries for scheduled maintenance
 
-### **Storage Location Viewing**
-- ✅ **View existing locations** - See storage locations if you had premium before
-- ✅ **View items by location** - Filter inventory by storage location
-- ❌ **Cannot create/edit** - Creating and editing locations requires Premium
-
 ### **Categories & Custom Retailers**
 - ✅ **Custom categories** - Create and manage your own categories
 - ✅ **Custom retailers** - Add your own store names and links
@@ -292,7 +287,6 @@ Perfect! I've thoroughly reviewed your codebase. Here's your **complete detailed
 | **Equipment parts tracking** | ✅ | ✅ |
 | **Store reminders (geofencing)** | ✅ | ✅ |
 | **Export maintenance to calendar** | ✅ | ✅ |
-| **View storage locations** | ✅ (view only) | ✅ |
 | **Create/edit storage locations** | ❌ | ✅ |
 | **QR codes** | ❌ | ✅ |
 | **Search & filter** | ✅ | ✅ |

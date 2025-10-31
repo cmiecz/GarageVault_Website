@@ -40,7 +40,6 @@ Track up to 10 items (1 photo + 1 receipt each)
 Full AI identification
 Store reminders (70+ hardware stores)
 Export maintenance to calendar
-View storage locations
 Categories & custom retailers
 Shopping list & low stock alerts
 Equipment parts tracking
