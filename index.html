@@ -120,66 +120,6 @@
             max-height: 500px;
         }
         
-        
-        /* Success Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            animation: fadeIn 0.3s ease-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background: linear-gradient(135deg, #4a7c9e 0%, #3d5a6e 100%);
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transform: scale(0.9);
-            animation: scaleIn 0.3s ease-out 0.1s forwards;
-            text-align: center;
-        }
-        
-        @keyframes scaleIn {
-            to { transform: scale(1); }
-        }
-        
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(74, 222, 128, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            animation: bounceIn 0.6s ease-out 0.2s both;
-        }
-        
-        @keyframes bounceIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        .success-checkmark {
-            color: #4ade80;
-            font-size: 3rem;
-        }
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -311,9 +251,9 @@
 <a class="text-base lg:text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="support/">Support</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-<button id="header-notify-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Notified</span>
-</button>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get it Now</span>
+</a>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -329,9 +269,9 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="#testimonials">Reviews</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="support/">Support</a>
-<button id="mobile-notify-btn" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Notified</span>
-</button>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get it Now</span>
+</a>
 </nav>
 </div>
 </div>
@@ -345,11 +285,9 @@
 <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-accent-light leading-relaxed">Take control of your garage. AI-powered inventory that reminds you what to buy at the perfect moment.</p>
 <div class="mt-2 sm:mt-4 lg:mt-6">
 <div class="flex flex-col items-center gap-4 max-w-md mx-auto">
-<form id="hero-form" class="w-full flex flex-col sm:flex-row gap-3">
-<input type="email" id="hero-email" placeholder="Enter your email" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-text-light placeholder:text-text-dark focus:outline-none focus:border-accent-light focus:ring-2 focus:ring-accent-light/50">
-<button type="submit" class="px-6 py-3 rounded-lg bg-accent text-white font-bold hover:bg-accent-light transition-colors shadow-lg whitespace-nowrap">Get Notified</button>
-</form>
-<p class="text-sm sm:text-base text-accent-light text-center">We'll notify you when GarageVault is available</p>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="inline-block">
+<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1727740800" alt="Download on the App Store" class="h-12 sm:h-14 w-auto">
+</a>
 </div>
 </div>
 </div>
@@ -831,10 +769,9 @@ Start Free Trial
 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-text-light">Ready to Transform Your Garage?</h2>
 <p class="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-accent-light max-w-3xl mx-auto">Join thousands of DIY enthusiasts and never buy duplicate tools again.</p>
 <div class="mt-6 sm:mt-8 lg:mt-10 flex justify-center">
-<form id="bottom-form" class="w-full max-w-md flex flex-col sm:flex-row gap-3">
-<input type="email" id="bottom-email" placeholder="Enter your email" required class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-text-light placeholder:text-text-dark focus:outline-none focus:border-accent-light focus:ring-2 focus:ring-accent-light/50">
-<button type="submit" class="px-6 py-3 rounded-lg bg-accent text-white font-bold hover:bg-accent-light transition-colors shadow-lg whitespace-nowrap">Get Notified</button>
-</form>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="inline-block">
+<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1727740800" alt="Download on the App Store" class="h-12 sm:h-14 w-auto">
+</a>
 </div>
 </section>
 </div>
@@ -894,89 +831,5 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Email signup form handler
-async function handleSignup(email, source) {
-    try {
-        const { data, error } = await supabase
-            .from('signups')
-            .insert([{
-                email: email,
-                source: source,
-                user_agent: navigator.userAgent
-            }]);
-
-        if (error) {
-            if (error.code === '23505') { // Duplicate email
-                showSuccessModal('You\'re already signed up! We\'ll notify you when GarageVault is available.');
-            } else {
-                throw error;
-            }
-        } else {
-            showSuccessModal('Thanks! We\'ll notify you when GarageVault is available.');
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'email_signup', {
-                    'event_category': 'engagement',
-                    'event_label': source,
-                    'value': 1
-                });
-            }
-        }
-    } catch (error) {
-        console.error('Error signing up:', error);
-        showSuccessModal('Oops! Something went wrong. Please try again.');
-    }
-}
-
-// Show success modal
-function showSuccessModal(message) {
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-overlay';
-    overlay.innerHTML = `
-        <div class="modal-content">
-            <div class="success-icon">
-                <span class="success-checkmark">✓</span>
-            </div>
-            <h2 class="text-2xl font-display font-bold text-white mb-4">Success!</h2>
-            <p class="text-text-light text-lg mb-6">${message}</p>
-            <button onclick="this.closest('.modal-overlay').remove()" class="px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent-light transition-colors">
-                Close
-            </button>
-        </div>
-    `;
-    document.body.appendChild(overlay);
-    setTimeout(() => overlay.remove(), 5000);
-}
-
-// Hero form
-document.getElementById('hero-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('hero-email').value;
-    await handleSignup(email, 'hero-form');
-    e.target.reset();
-});
-
-// Bottom form
-document.getElementById('bottom-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = document.getElementById('bottom-email').value;
-    await handleSignup(email, 'bottom-form');
-    e.target.reset();
-});
-
-// Header notify button (opens email input modal)
-document.getElementById('header-notify-btn').addEventListener('click', () => {
-    const email = prompt('Enter your email to get notified when GarageVault is available:');
-    if (email && email.includes('@')) {
-        handleSignup(email, 'header-button');
-    }
-});
-
-// Mobile notify button
-document.getElementById('mobile-notify-btn').addEventListener('click', () => {
-    const email = prompt('Enter your email to get notified when GarageVault is available:');
-    if (email && email.includes('@')) {
-        handleSignup(email, 'mobile-button');
-    }
-});
 </script>
 </body></html>
