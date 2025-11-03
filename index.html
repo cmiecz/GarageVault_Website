@@ -921,24 +921,38 @@ Start Free Trial
 <div class="instagram-carousel-wrapper max-w-6xl mx-auto">
 <div class="swiper instagram-carousel">
 <div class="swiper-wrapper">
-<!-- Instagram posts - Add your Instagram embed codes here -->
+<!-- Instagram posts - Add your Instagram post URLs here -->
 <!-- 
-To add Instagram posts:
-1. Go to an Instagram post on instagram.com
-2. Click the three dots (⋯) → Select "Embed"
-3. Copy the embed code
-4. Paste it inside a <div class="swiper-slide"> tag below
-5. Repeat for 3-5 posts
+HOW TO ADD YOUR INSTAGRAM POSTS:
 
-Example:
+Method 1 - Get Post URL from Instagram:
+1. Open any Instagram post on instagram.com (desktop) or in the app
+2. Click the three dots (...) or Share button
+3. Select "Copy Link" (NOT "Embed")
+4. You'll get a URL like: https://www.instagram.com/p/ABC123xyz/
+5. Replace "YOUR_POST_URL_HERE" below with that URL
+
+Method 2 - Right-click on post:
+1. Right-click on the Instagram post image
+2. Select "Copy link address" or "Copy Link"
+3. Paste the URL below
+
+Example URLs to add:
 <div class="swiper-slide">
-  [Paste Instagram embed code here]
+  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
 </div>
+
+Duplicate the block above for each post (3-5 posts recommended)
 -->
 <div class="swiper-slide">
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_ID/" data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
 </div>
-<!-- Duplicate the above div.swiper-slide block for additional posts -->
+<div class="swiper-slide">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
+</div>
+<div class="swiper-slide">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
+</div>
 </div>
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
