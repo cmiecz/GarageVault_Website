@@ -2,6 +2,8 @@
 <html class="dark" lang="en"><head>
 <meta name='impact-site-verification' value='4be02444-35c1-4d2e-ac51-1e41089aec06' />
 <!-- Google tag (gtag.js) -->
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0N36H0LXYX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -118,6 +120,86 @@
         }
         .mobile-menu.open {
             max-height: 500px;
+        }
+        
+        /* Instagram Carousel Styles */
+        .instagram-carousel-wrapper {
+            position: relative;
+            padding: 0 40px;
+        }
+        
+        .instagram-carousel {
+            overflow: visible;
+        }
+        
+        .instagram-carousel .swiper-slide {
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .instagram-carousel .swiper-button-next,
+        .instagram-carousel .swiper-button-prev {
+            color: #4a7c9e;
+            background: rgba(61, 90, 110, 0.8);
+            backdrop-filter: blur(4px);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-top: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .instagram-carousel .swiper-button-next:after,
+        .instagram-carousel .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .instagram-carousel .swiper-button-next:hover,
+        .instagram-carousel .swiper-button-prev:hover {
+            background: rgba(74, 124, 158, 0.9);
+            color: #fff;
+        }
+        
+        .instagram-carousel .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        .instagram-carousel .swiper-pagination-bullet {
+            background: #4a7c9e;
+            opacity: 0.5;
+        }
+        
+        .instagram-carousel .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #4a7c9e;
+        }
+        
+        .instagram-carousel blockquote.instagram-media {
+            margin: 0 !important;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        @media (max-width: 640px) {
+            .instagram-carousel-wrapper {
+                padding: 0 30px;
+            }
+            
+            .instagram-carousel .swiper-button-next,
+            .instagram-carousel .swiper-button-prev {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .instagram-carousel .swiper-button-next:after,
+            .instagram-carousel .swiper-button-prev:after {
+                font-size: 14px;
+            }
         }
         
     </style>
@@ -829,7 +911,42 @@ Start Free Trial
 </svg>
 </a>
 </div>
-<p class="text-sm sm:text-base text-text-dark text-center md:text-left">© 2024 GarageVault. All rights reserved.</p>
+</div>
+<!-- Instagram Carousel Section -->
+<div class="w-full mt-8 sm:mt-12">
+<div class="text-center mb-6">
+<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-2">Follow Us on Instagram</h3>
+<a href="https://www.instagram.com/garagevault.app/" target="_blank" rel="noopener noreferrer" class="text-accent-light hover:text-accent transition-colors text-sm sm:text-base">@garagevault.app</a>
+</div>
+<div class="instagram-carousel-wrapper max-w-6xl mx-auto">
+<div class="swiper instagram-carousel">
+<div class="swiper-wrapper">
+<!-- Instagram posts - Add your Instagram embed codes here -->
+<!-- 
+To add Instagram posts:
+1. Go to an Instagram post on instagram.com
+2. Click the three dots (⋯) → Select "Embed"
+3. Copy the embed code
+4. Paste it inside a <div class="swiper-slide"> tag below
+5. Repeat for 3-5 posts
+
+Example:
+<div class="swiper-slide">
+  [Paste Instagram embed code here]
+</div>
+-->
+<div class="swiper-slide">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_ID/" data-instgrm-version="14"></blockquote>
+</div>
+<!-- Duplicate the above div.swiper-slide block for additional posts -->
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</div>
+<p class="text-sm sm:text-base text-text-dark text-center md:text-left mt-8">© 2024 GarageVault. All rights reserved.</p>
 </div>
 </div>
 </footer>
@@ -867,5 +984,63 @@ window.addEventListener('resize', () => {
     }
 });
 
+</script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Instagram Embed Script -->
+<script async src="https://www.instagram.com/embed.js"></script>
+<!-- Instagram Carousel Initialization -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const instagramCarousel = new Swiper('.instagram-carousel', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        loop: true,
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+            1280: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+    
+    // Load Instagram embeds after carousel is initialized
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    } else {
+        // Retry if Instagram script hasn't loaded yet
+        window.addEventListener('load', function() {
+            if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            }
+        });
+    }
+});
 </script>
 </body></html>
