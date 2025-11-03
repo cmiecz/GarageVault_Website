@@ -971,24 +971,13 @@ window.addEventListener('resize', () => {
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- Instagram Embed Script -->
-<script async src="https://www.instagram.com/embed.js"></script>
-<!-- Instagram Carousel with Auto-Population using LightWidget (FREE) -->
+<!-- LightWidget Script -->
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+<!-- Instagram Carousel with Auto-Population using LightWidget -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const instagramUsername = 'garagevault.app';
     const container = document.getElementById('instagram-feed-container');
     let instagramCarousel;
-    
-    // Using LightWidget - FREE service that auto-populates Instagram feed
-    // To get your widget code: https://lightwidget.com/
-    // 1. Go to lightwidget.com (completely free, no account needed)
-    // 2. Enter your Instagram username: garagevault.app
-    // 3. Choose "Slideshow" layout
-    // 4. Customize colors/settings
-    // 5. Copy the widget code and paste below
-    
-    const lightWidgetCode = 'YOUR_LIGHTWIDGET_CODE_HERE'; // Replace with code from lightwidget.com
     
     function initializeCarousel() {
         instagramCarousel = new Swiper('.instagram-carousel', {
@@ -1029,53 +1018,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Load LightWidget if code is provided
-    if (lightWidgetCode && lightWidgetCode !== 'YOUR_LIGHTWIDGET_CODE_HERE') {
-        // LightWidget will auto-populate the feed
-        container.innerHTML = `
-            <div class="swiper-slide" style="width: 100%;">
-                ${lightWidgetCode}
-            </div>
-        `;
+    // Load LightWidget iframe
+    container.innerHTML = `
+        <div class="swiper-slide" style="width: 100%;">
+            <iframe src="//lightwidget.com/widgets/ac76b6a5d5cf569a83208841803c0681.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+        </div>
+    `;
+    
+    // Initialize carousel after iframe is loaded
+    setTimeout(() => {
         initializeCarousel();
-    } else {
-        // Show instructions to set up LightWidget
-        container.innerHTML = `
-            <div class="swiper-slide">
-                <div class="text-center text-text-dark p-8 bg-primary-dark/40 rounded-xl">
-                    <h4 class="text-lg font-bold text-text-light mb-4">Set Up Free Auto-Populating Instagram Feed</h4>
-                    <ol class="text-left max-w-md mx-auto space-y-2 text-sm">
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold">1.</span>
-                            <span>Visit <a href="https://lightwidget.com" target="_blank" class="text-accent-light hover:text-accent underline">lightwidget.com</a> (100% FREE, no account needed)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold">2.</span>
-                            <span>Enter Instagram username: <strong>@${instagramUsername}</strong></span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold">3.</span>
-                            <span>Choose "Slideshow" layout for carousel</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold">4.</span>
-                            <span>Customize colors to match your site (optional)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold">5.</span>
-                            <span>Click "Generate Code" and copy the entire widget code</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold">6.</span>
-                            <span>Replace <code class="bg-primary-dark px-2 py-1 rounded text-accent-light">YOUR_LIGHTWIDGET_CODE_HERE</code> in index.html with the code</span>
-                        </li>
-                    </ol>
-                    <p class="mt-4 text-xs text-text-dark">The feed will automatically update with your latest Instagram posts!</p>
-                </div>
-            </div>
-        `;
-        initializeCarousel();
-    }
+    }, 500);
 });
 </script>
 </body></html>
