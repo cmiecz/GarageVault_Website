@@ -919,40 +919,9 @@ Start Free Trial
 <a href="https://www.instagram.com/garagevault.app/" target="_blank" rel="noopener noreferrer" class="text-accent-light hover:text-accent transition-colors text-sm sm:text-base">@garagevault.app</a>
 </div>
 <div class="instagram-carousel-wrapper max-w-6xl mx-auto">
-<div class="swiper instagram-carousel">
-<div class="swiper-wrapper">
-<!-- Instagram posts - Add your Instagram post URLs here -->
-<!-- 
-HOW TO ADD YOUR INSTAGRAM POSTS:
-
-Method 1 - Get Post URL from Instagram:
-1. Open any Instagram post on instagram.com (desktop) or in the app
-2. Click the three dots (...) or Share button
-3. Select "Copy Link" (NOT "Embed")
-4. You'll get a URL like: https://www.instagram.com/p/ABC123xyz/
-5. Replace "YOUR_POST_URL_HERE" below with that URL
-
-Method 2 - Right-click on post:
-1. Right-click on the Instagram post image
-2. Select "Copy link address" or "Copy Link"
-3. Paste the URL below
-
-Example URLs to add:
-<div class="swiper-slide">
-  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
-</div>
-
-Duplicate the block above for each post (3-5 posts recommended)
--->
-<div class="swiper-slide">
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
-</div>
-<div class="swiper-slide">
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
-</div>
-<div class="swiper-slide">
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_URL_HERE/" data-instgrm-version="14"></blockquote>
-</div>
+<div id="instagram-feed-carousel" class="swiper instagram-carousel">
+<div class="swiper-wrapper" id="instagram-feed-container">
+<!-- Posts will be auto-populated here -->
 </div>
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
@@ -1004,56 +973,108 @@ window.addEventListener('resize', () => {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- Instagram Embed Script -->
 <script async src="https://www.instagram.com/embed.js"></script>
-<!-- Instagram Carousel Initialization -->
+<!-- Instagram Carousel with Auto-Population using SnapWidget -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const instagramCarousel = new Swiper('.instagram-carousel', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
-        loop: true,
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-            },
-            1280: {
-                slidesPerView: 5,
-                spaceBetween: 30,
-            },
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
+    const instagramUsername = 'garagevault.app';
+    const container = document.getElementById('instagram-feed-container');
+    let instagramCarousel;
     
-    // Load Instagram embeds after carousel is initialized
-    if (window.instgrm) {
-        window.instgrm.Embeds.process();
-    } else {
-        // Retry if Instagram script hasn't loaded yet
-        window.addEventListener('load', function() {
-            if (window.instgrm) {
-                window.instgrm.Embeds.process();
-            }
+    // Using SnapWidget for auto-population (free service)
+    // To get your widget ID: https://snapwidget.com/
+    // 1. Create account (free)
+    // 2. Add Instagram account: @garagevault.app
+    // 3. Choose carousel/slider layout
+    // 4. Copy widget ID and paste below
+    
+    const snapWidgetId = 'YOUR_SNAPWIDGET_ID_HERE'; // Replace with your widget ID from snapwidget.com
+    
+    function initializeCarousel() {
+        instagramCarousel = new Swiper('.instagram-carousel', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            loop: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 30,
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
         });
+    }
+    
+    // Load SnapWidget if ID is provided
+    if (snapWidgetId && snapWidgetId !== 'YOUR_SNAPWIDGET_ID_HERE') {
+        // SnapWidget will auto-populate the feed
+        container.innerHTML = `
+            <div class="swiper-slide" style="width: 100%; height: 600px;">
+                <iframe src="https://snapwidget.com/embed/${snapWidgetId}" 
+                        class="snapwidget-widget" 
+                        allowtransparency="true" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        style="border:none; overflow:hidden; width:100%; height:100%;"></iframe>
+            </div>
+        `;
+        initializeCarousel();
+    } else {
+        // Show instructions to set up SnapWidget
+        container.innerHTML = `
+            <div class="swiper-slide">
+                <div class="text-center text-text-dark p-8 bg-primary-dark/40 rounded-xl">
+                    <h4 class="text-lg font-bold text-text-light mb-4">Set Up Auto-Populating Instagram Feed</h4>
+                    <ol class="text-left max-w-md mx-auto space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="font-bold">1.</span>
+                            <span>Visit <a href="https://snapwidget.com" target="_blank" class="text-accent-light hover:text-accent underline">snapwidget.com</a> (free)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="font-bold">2.</span>
+                            <span>Create account and add Instagram: <strong>@${instagramUsername}</strong></span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="font-bold">3.</span>
+                            <span>Choose "Slider" or "Carousel" layout</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="font-bold">4.</span>
+                            <span>Copy the widget ID from the embed code</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="font-bold">5.</span>
+                            <span>Replace <code class="bg-primary-dark px-2 py-1 rounded text-accent-light">YOUR_SNAPWIDGET_ID_HERE</code> in the code with your widget ID</span>
+                        </li>
+                    </ol>
+                    <p class="mt-4 text-xs text-text-dark">The feed will automatically update with your latest Instagram posts!</p>
+                </div>
+            </div>
+        `;
+        initializeCarousel();
     }
 });
 </script>
