@@ -2,8 +2,6 @@
 <html class="dark" lang="en"><head>
 <meta name='impact-site-verification' value='4be02444-35c1-4d2e-ac51-1e41089aec06' />
 <!-- Google tag (gtag.js) -->
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0N36H0LXYX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -127,81 +125,6 @@
             position: relative;
             padding: 0 40px;
         }
-        
-        .instagram-carousel {
-            overflow: visible;
-        }
-        
-        .instagram-carousel .swiper-slide {
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .instagram-carousel .swiper-button-next,
-        .instagram-carousel .swiper-button-prev {
-            color: #4a7c9e;
-            background: rgba(61, 90, 110, 0.8);
-            backdrop-filter: blur(4px);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-top: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        
-        .instagram-carousel .swiper-button-next:after,
-        .instagram-carousel .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .instagram-carousel .swiper-button-next:hover,
-        .instagram-carousel .swiper-button-prev:hover {
-            background: rgba(74, 124, 158, 0.9);
-            color: #fff;
-        }
-        
-        .instagram-carousel .swiper-pagination {
-            position: relative;
-            margin-top: 20px;
-        }
-        
-        .instagram-carousel .swiper-pagination-bullet {
-            background: #4a7c9e;
-            opacity: 0.5;
-        }
-        
-        .instagram-carousel .swiper-pagination-bullet-active {
-            opacity: 1;
-            background: #4a7c9e;
-        }
-        
-        .instagram-carousel blockquote.instagram-media {
-            margin: 0 !important;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        @media (max-width: 640px) {
-            .instagram-carousel-wrapper {
-                padding: 0 30px;
-            }
-            
-            .instagram-carousel .swiper-button-next,
-            .instagram-carousel .swiper-button-prev {
-                width: 32px;
-                height: 32px;
-            }
-            
-            .instagram-carousel .swiper-button-next:after,
-            .instagram-carousel .swiper-button-prev:after {
-                font-size: 14px;
-            }
-        }
-        
     </style>
     
     <!-- Structured Data (JSON-LD) -->
@@ -912,23 +835,6 @@ Start Free Trial
 </a>
 </div>
 </div>
-<!-- Instagram Carousel Section -->
-<div class="w-full mt-8 sm:mt-12">
-<div class="text-center mb-6">
-<h3 class="text-xl sm:text-2xl font-display font-bold text-text-light mb-2">Follow Us on Instagram</h3>
-<a href="https://www.instagram.com/garagevault.app/" target="_blank" rel="noopener noreferrer" class="text-accent-light hover:text-accent transition-colors text-sm sm:text-base">@garagevault.app</a>
-</div>
-<div class="instagram-carousel-wrapper max-w-6xl mx-auto">
-<div id="instagram-feed-carousel" class="swiper instagram-carousel">
-<div class="swiper-wrapper" id="instagram-feed-container">
-<!-- Posts will be auto-populated here -->
-</div>
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-pagination"></div>
-</div>
-</div>
-</div>
 <p class="text-sm sm:text-base text-text-dark text-center md:text-left mt-8">© 2024 GarageVault. All rights reserved.</p>
 </div>
 </div>
@@ -969,66 +875,4 @@ window.addEventListener('resize', () => {
 
 </script>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- LightWidget Script -->
-<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-<!-- Instagram Carousel with Auto-Population using LightWidget -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('instagram-feed-container');
-    let instagramCarousel;
-    
-    function initializeCarousel() {
-        instagramCarousel = new Swiper('.instagram-carousel', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-            loop: true,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                },
-                1280: {
-                    slidesPerView: 5,
-                    spaceBetween: 30,
-                },
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-        });
-    }
-    
-    // Load LightWidget iframe
-    container.innerHTML = `
-        <div class="swiper-slide" style="width: 100%;">
-            <iframe src="//lightwidget.com/widgets/ac76b6a5d5cf569a83208841803c0681.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-        </div>
-    `;
-    
-    // Initialize carousel after iframe is loaded
-    setTimeout(() => {
-        initializeCarousel();
-    }, 500);
-});
-</script>
 </body></html>
