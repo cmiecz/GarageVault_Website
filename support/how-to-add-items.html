@@ -25,6 +25,7 @@
 <meta name="theme-color" content="#4a7c9e"/>
 <meta name="language" content="en"/>
 <meta name="locale" content="en_US"/>
+<meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://garagevault.app/support/how-to-add-items.html"/>
 
 <title>How to Add Items to Your Inventory | Garage Vault Support</title>
@@ -139,6 +140,88 @@
             margin: 1rem 0;
         }
     </style>
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://garagevault.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Support",
+          "item": "https://garagevault.app/support/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Add Items",
+          "item": "https://garagevault.app/support/how-to-add-items.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- WebPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "How to Add Items to Your Inventory",
+      "description": "Complete guide to adding items to your Garage Vault inventory. Learn manual entry, AI scanning, category-specific fields, and best practices for all item types.",
+      "url": "https://garagevault.app/support/how-to-add-items.html",
+      "inLanguage": "en-US",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "GarageVault",
+        "url": "https://garagevault.app"
+      }
+    }
+    </script>
+    
+    <!-- HowTo Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Add Items to Your GarageVault Inventory",
+      "description": "Complete guide to adding items to your Garage Vault inventory using AI scanning or manual entry.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Open GarageVault App",
+          "text": "Launch the GarageVault app on your iOS device."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Choose Add Method",
+          "text": "Select either AI scanning (take a photo) or manual entry to add an item."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "AI Scanning",
+          "text": "Take a photo of the item. The AI will automatically identify it and extract details like brand, size, and color."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Manual Entry",
+          "text": "Enter item details manually including name, category, quantity, and other relevant information."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Review and Save",
+          "text": "Review the auto-filled information, make any necessary corrections, and save the item to your inventory."
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-background-dark text-text-light font-body">
 <div class="relative min-h-screen w-full overflow-x-hidden">
@@ -188,6 +271,16 @@
 </header>
 <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
 <div class="max-w-4xl mx-auto">
+<!-- Breadcrumb Navigation -->
+<nav class="mb-6 text-sm" aria-label="Breadcrumb">
+<ol class="flex items-center gap-2 text-text-dark">
+<li><a href="../../index.html" class="hover:text-accent-light transition-colors">Home</a></li>
+<li class="text-text-dark">/</li>
+<li><a href="index.html" class="hover:text-accent-light transition-colors">Support</a></li>
+<li class="text-text-dark">/</li>
+<li class="text-text-light">How to Add Items</li>
+</ol>
+</nav>
 <!-- Back to Support Link -->
 <a href="index.html" class="inline-flex items-center gap-2 text-accent-light hover:text-accent mb-8 transition-colors">
 <span class="material-symbols-outlined">arrow_back</span>
