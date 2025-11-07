@@ -195,9 +195,9 @@
 <a class="text-base lg:text-lg font-medium text-accent-light transition-colors" href="index.html">Support</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-<button id="header-notify-btn" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Notified</span>
-</button>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="hidden sm:flex h-10 sm:h-12 items-center justify-center rounded-lg bg-accent px-4 sm:px-6 text-sm sm:text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get it Now</span>
+</a>
 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center h-10 w-10 text-accent-light" aria-label="Toggle menu">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path class="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -213,9 +213,9 @@
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#pricing">Pricing</a>
 <a class="text-lg font-medium text-text-dark hover:text-accent-light transition-colors" href="../../index.html#testimonials">Reviews</a>
 <a class="text-lg font-medium text-accent-light transition-colors" href="index.html">Support</a>
-<button id="mobile-notify-btn" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
-<span class="truncate">Get Notified</span>
-</button>
+<a href="https://apps.apple.com/us/app/garagevault/id6753317037" target="_blank" rel="noopener noreferrer" class="mt-2 h-12 w-full flex items-center justify-center rounded-lg bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent-light shadow-lg">
+<span class="truncate">Get it Now</span>
+</a>
 </nav>
 </div>
 </div>
@@ -651,21 +651,7 @@ async function handleSignup(email, source) {
     }
 }
 
-// Header notify button
-document.getElementById('header-notify-btn').addEventListener('click', () => {
-    const email = prompt('Enter your email to get notified when GarageVault is available:');
-    if (email && email.includes('@')) {
-        handleSignup(email, 'support-header-button');
-    }
-});
 
-// Mobile notify button
-document.getElementById('mobile-notify-btn').addEventListener('click', () => {
-    const email = prompt('Enter your email to get notified when GarageVault is available:');
-    if (email && email.includes('@')) {
-        handleSignup(email, 'support-mobile-button');
-    }
-});
 </script>
 </body>
 </html>
